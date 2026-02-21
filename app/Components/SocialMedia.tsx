@@ -5,7 +5,7 @@ const SocialMedia: React.FC = () => {
     return (
         <div className='hidden lg:flex flex-col top-[35%] left-0 fixed'>
             <ul>
-                <li className='flex justify-between items-center w-36 h-12 px-4 bg-white ml-[-95px] hover:ml-[-10px]'>
+                <li className='flex justify-between items-center w-36 h-12 px-4 bg-white -ml-23.75 hover:-ml-2.5'>
                     <a
                         className='flex justify-between w-full font-bold z-50 text-black'
                         href="https://www.linkedin.com/in/lorensius-bernard-gani"
@@ -16,7 +16,7 @@ const SocialMedia: React.FC = () => {
                         <FaLinkedin size={25} className='text-black'/>
                     </a>
                 </li>
-                <li className='flex justify-between items-center w-36 h-12 px-4 bg-white ml-[-95px] hover:ml-[-10px]'>
+                <li className='flex justify-between items-center w-36 h-12 px-4 bg-white -ml-23.75 hover:-ml-2.5'>
                     <a
                         className='flex justify-between w-full font-bold z-50 text-black'
                         href="https://github.com/LorensiusGani"
@@ -27,7 +27,7 @@ const SocialMedia: React.FC = () => {
                         <FaGithub size={25} className='text-black'/>
                     </a>
                 </li>
-                <li className='flex justify-between items-center w-36 h-12 px-4 bg-white ml-[-95px] hover:ml-[-10px]'>
+                <li className='flex justify-between items-center w-36 h-12 px-4 bg-white -ml-23.75 hover:-ml-2.5'>
                     <a
                         className='flex justify-between w-full font-bold z-50 text-black'
                         href="https://www.instagram.com/lorensius.gani/"
