@@ -54,7 +54,7 @@ export default function Portfolio() {
     >
       {/* ================= PROJECT SECTION ================= */}
       <div className="flex justify-center items-center mb-10">
-        <h1 className="text-3xl md:text-5xl font-bold">Portfolio</h1>
+        <h1 className="text-3xl md:text-5xl font-bold">Portfolio Project</h1>
       </div>
 
       <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
