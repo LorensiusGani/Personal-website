@@ -15,9 +15,26 @@ export default function Home() {
             <p className="text-white text-2xl py-3 font-semibold">
               Binus University - Computer Science Student
             </p>
-            {/* <p className="text-white text-2xl font-semibold">
-              Front End Developer
-            </p> */}
+            <div className="flex gap-4 mt-4">
+              {/* View CV */}
+              <a
+                href="/CV/CV-Lorensius-Bernard-Gani.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-2 bg-white text-black font-semibold rounded-lg hover:bg-gray-300 transition duration-300"
+              >
+                View CV
+              </a>
+
+              {/* Download CV */}
+              <a
+                href="/CV/CV-Lorensius-Bernard-Gani.pdf"
+                download
+                className="px-6 py-2 bg-white text-black font-semibold rounded-lg hover:bg-gray-300 transition duration-300"
+              >
+                Download CV
+              </a>
+            </div>
           </div>
           <div>
             <img
