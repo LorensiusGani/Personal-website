@@ -23,7 +23,7 @@ const Navbar = () => {
           <a href="#about" className="">About</a>
         </li>
         <li className="px-5 cursor-pointer font-semibold hover:text-white hover:bg-black scale-105 duration-100 text-lg">
-          <a href="#porto">Portfolio</a>
+          <a href="#portfolio">Portfolio</a>
         </li>
       </ul>
 
@@ -45,7 +45,7 @@ const Navbar = () => {
             <a href="#about" onClick={() => setNav(false)}>About</a>
           </li>
           <li className="px-5 font-semibold text-2xl mt-10">
-            <a href="#porto" onClick={() => setNav(false)}>Portfolio</a>
+            <a href="#portfolio" onClick={() => setNav(false)}>Portfolio</a>
           </li>
         </ul>
       )}

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Tools from "./Tools";
 
 type Project = {
   title: string;
@@ -40,7 +41,6 @@ const skills: Skill[] = [
   { name: "Next JS", image: "/Assets/Next.png" },
   { name: "Tailwind CSS", image: "/Assets/Tailwind.png" },
   { name: "Bootstrap", image: "/Assets/Bootstrap.png" },
-  { name: "Figma", image: "/Assets/Figma.png" },
   { name: "Python", image: "/Assets/Python-logo.png" },
   { name: "SQL", image: "/Assets/SQL.png" },
   { name: "PostgreSQL", image: "/Assets/PostgreSQL.png" },
@@ -141,6 +141,7 @@ export default function Portfolio() {
           </div>
         ))}
       </div>
+      <Tools />
     </section>
   );
 }
