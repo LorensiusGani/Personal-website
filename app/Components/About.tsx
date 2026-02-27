@@ -102,7 +102,7 @@ const About: React.FC = () => {
 
       <div className="h-1 mt-7 mx-5 bg-white"></div>
 
-      <div className="text-white mt-16">
+      <div className="text-white mt-8">
         <h3 className="mt-8 mb-8 text-3xl md:text-5xl font-bold text-center">
           Work Experience
         </h3>
