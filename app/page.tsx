@@ -15,9 +15,9 @@ export default function Home() {
             <p className="text-white text-2xl py-3 font-semibold">
               Binus University - Computer Science Student
             </p>
-            <p className="text-white text-2xl font-semibold">
+            {/* <p className="text-white text-2xl font-semibold">
               Front End Developer
-            </p>
+            </p> */}
           </div>
           <div>
             <img
