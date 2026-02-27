@@ -6,7 +6,7 @@ interface Tools {
 }
 
 const tools: Tools[] = [
-    { name: 'Visual Studio Code', image: '/Assets/VSCode.png' },
+    { name: 'Visual Studio Code', image: '/Assets/VsCode.png' },
     { name: 'Github', image: '/Assets/Github.png' },
     { name: 'Postman', image: '/Assets/Postman-1.png' },
     { name: 'Trello', image: '/Assets/Trello.png' },
