@@ -39,6 +39,7 @@ const skills: Skill[] = [
   { name: "C#", image: "/Assets/Csharp.png" },
   { name: "React", image: "/Assets/React-logo.png" },
   { name: "Next JS", image: "/Assets/Next.png" },
+  { name: "Laravel", image: "/Assets/Laravel.png" },
   { name: "Tailwind CSS", image: "/Assets/Tailwind.png" },
   { name: "Bootstrap", image: "/Assets/Bootstrap.png" },
   { name: "Python", image: "/Assets/Python-logo.png" },
