@@ -140,7 +140,7 @@ export default function Home() {
                 "
               >
                 <img
-                  src="/Assets/Personal-2.png"
+                  src="/Assets/personal-2.png"
                   alt="Lorensius Bernard Gani"
                   className="
                    w-[260px] md:w-[300px]
