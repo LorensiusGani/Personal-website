@@ -4,52 +4,154 @@ import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
-  const [nav, setNav] = useState<boolean>(false);
+  const [nav, setNav] = useState(false);
 
   return (
-    <div className="flex justify-between items-center w-full h-20 px-14 text-black bg-white fixed z-50">
-      <div>
-        <h1 className="text-2xl md:text-3xl font-bold md:ml-5 cursor-pointer scale-105 duration-100">
+    <header
+      className="
+        fixed
+        top-0
+        left-0
+        w-full
+        z-50
+        backdrop-blur-xl
+        bg-black/50
+        border-b
+        border-white/20
+      "
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
+        
+        {/* Logo */}
+        <a
+          href="#home"
+          className="
+            text-white
+            text-2xl
+            font-bold
+            tracking-tight
+          "
+        >
           Lorensius Gani
-        </h1>
-      </div>
+          <span className="text-[#3D8D7A]">.</span>
+        </a>
 
-      {/* Desktop Menu */}
-      <ul className="hidden md:flex">
-        <li className="px-5 cursor-pointer font-semibold hover:text-white hover:bg-black scale-105 duration-100 text-lg">
-          <a href="#home">Home</a>
-        </li>
-        <li className="px-5 cursor-pointer font-semibold hover:text-white hover:bg-black scale-105 duration-100 text-lg">
-          <a href="#about" className="">About</a>
-        </li>
-        <li className="px-5 cursor-pointer font-semibold hover:text-white hover:bg-black scale-105 duration-100 text-lg">
-          <a href="#portfolio">Portfolio</a>
-        </li>
-      </ul>
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex items-center gap-10">
+          <a
+            href="#home"
+            className="
+              text-gray-300
+              hover:text-white
+              transition
+            "
+          >
+            Home
+          </a>
 
-      {/* Hamburger */}
-      <div
-        onClick={() => setNav(!nav)}
-        className="cursor-pointer pr-4 z-20 text-slate-900 md:hidden"
-      >
-        {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
+          <a
+            href="#about"
+            className="
+              text-gray-300
+              hover:text-white
+              transition
+            "
+          >
+            About
+          </a>
+
+          <a
+            href="#portfolio"
+            className="
+              text-gray-300
+              hover:text-white
+              transition
+            "
+          >
+            Portfolio
+          </a>
+
+          <a
+            href="/CV/CV-Lorensius-Bernard-Gani.pdf"
+            target="_blank"
+            className="
+              px-5
+              py-2
+              rounded-full
+              bg-[#3D8D7A]
+              hover:bg-[#4BA08D]
+              text-white
+              font-medium
+              transition
+            "
+          >
+            Resume
+          </a>
+        </nav>
+
+        {/* Mobile Button */}
+        <button
+          onClick={() => setNav(!nav)}
+          className="md:hidden text-white"
+        >
+          {nav ? <FaTimes size={24} /> : <FaBars size={24} />}
+        </button>
       </div>
 
       {/* Mobile Menu */}
       {nav && (
-        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-slate-200 text-black">
-          <li className="px-5 font-semibold text-2xl mt-10">
-            <a href="#home" onClick={() => setNav(false)}>Home</a>
-          </li>
-          <li className="px-5 font-semibold text-2xl mt-10">
-            <a href="#about" onClick={() => setNav(false)}>About</a>
-          </li>
-          <li className="px-5 font-semibold text-2xl mt-10">
-            <a href="#portfolio" onClick={() => setNav(false)}>Portfolio</a>
-          </li>
-        </ul>
+        <div
+          className="
+            md:hidden
+            bg-black/95
+            backdrop-blur-xl
+            border-t
+            border-white/10
+          "
+        >
+          <div className="flex flex-col items-center py-8 gap-6">
+            <a
+              href="#home"
+              onClick={() => setNav(false)}
+              className="text-white text-lg"
+            >
+              Home
+            </a>
+
+            <a
+              href="#about"
+              onClick={() => setNav(false)}
+              className="text-white text-lg"
+            >
+              About
+            </a>
+
+            <a
+              href="#portfolio"
+              onClick={() => setNav(false)}
+              className="text-white text-lg"
+            >
+              Portfolio
+            </a>
+
+            <a
+              href="/CV/CV-Lorensius-Bernard-Gani.pdf"
+              target="_blank"
+              className="
+                px-6
+                py-3
+                rounded-full
+                bg-[#3D8D7A]
+                text-white
+                font-medium
+              "
+            >
+              Resume
+            </a>
+          </div>
+        </div>
       )}
-    </div>
+    </header>
   );
 };
 

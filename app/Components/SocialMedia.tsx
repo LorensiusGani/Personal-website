@@ -1,49 +1,77 @@
-import React from 'react'
-import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa'
+import React from "react";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
-const SocialMedia: React.FC = () => {
-    return (
-        <div className='hidden lg:flex flex-col top-[35%] left-0 fixed'>
-            <ul>
-                <li className='flex justify-between items-center w-36 h-12 px-4 bg-white -ml-23.75 hover:-ml-2.5'>
-                    <a
-                        className='flex justify-between w-full font-bold z-50 text-black'
-                        href="https://www.linkedin.com/in/lorensius-bernard-gani"
-                        target='_blank'
-                        rel="noopener noreferrer"
-                    >
-                        LinkedIn
-                        <FaLinkedin size={25} className='text-black'/>
-                    </a>
-                </li>
-                <li className='flex justify-between items-center w-36 h-12 px-4 bg-white -ml-23.75 hover:-ml-2.5'>
-                    <a
-                        className='flex justify-between w-full font-bold z-50 text-black'
-                        href="https://github.com/LorensiusGani"
-                        target='_blank'
-                        rel="noopener noreferrer"
-                    >
-                        <span>Github</span>
-                        <FaGithub size={25} className='text-black'/>
-                    </a>
-                </li>
-                <li className='flex justify-between items-center w-36 h-12 px-4 bg-white -ml-23.75 hover:-ml-2.5'>
-                    <a
-                        className='flex justify-between w-full font-bold z-50 text-black'
-                        href="https://www.instagram.com/lorensius.gani/"
-                        target='_blank'
-                        rel="noopener noreferrer"
-                    >
-                       <span>Instagram</span>
-                       <FaInstagram size={25} className='text-black'/>
-                    </a>
-                </li>
-                <li>
+const SocialMedia = () => {
+  return (
+    <div
+      className="
+        hidden
+        lg:flex
+        fixed
+        left-2
+        top-1/2
+        -translate-y-1/2
+        z-50
+      "
+    >
+      <div
+        className="
+          flex
+          flex-col
+          gap-5
+          p-3
+          rounded-2xl
+          bg-[#0D1117]/80
+          backdrop-blur-md
+          border
+          border-[#3D8D7A]/20
+          shadow-xl
+        "
+      >
+        <a
+          href="https://www.linkedin.com/in/lorensius-bernard-gani"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            text-gray-300
+            hover:text-[#3D8D7A]
+            hover:scale-110
+            transition
+          "
+        >
+          <FaLinkedin size={28} />
+        </a>
 
-                </li>
-            </ul>
-        </div>
-    )
-}
+        <a
+          href="https://github.com/LorensiusGani"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            text-gray-300
+            hover:text-[#3D8D7A]
+            hover:scale-110
+            transition
+          "
+        >
+          <FaGithub size={28} />
+        </a>
 
-export default SocialMedia
+        <a
+          href="https://www.instagram.com/lorensius.gani/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            text-gray-300
+            hover:text-[#3D8D7A]
+            hover:scale-110
+            transition
+          "
+        >
+          <FaInstagram size={28} />
+        </a>
+      </div>
+    </div>
+  );
+};
+
+export default SocialMedia;

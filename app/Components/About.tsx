@@ -57,7 +57,24 @@ const experiences: Experience[] = [
 
 const workExperiences: WorkExperience[] = [
   {
-    title: "Full Stack Developer Intern",
+    title: "Full Stack Developer",
+    company: "PT Enseval Putra Megatrading",
+    date: "April 2026 - Present",
+    description: [
+      "Developed web applications using React/Next.js (TypeScript) for the frontend and ASP.NET Core Web API for the backend.",
+    ],
+    skills: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "ASP.NET Web Core API",
+      "PostgreSQL",
+      "Scrum Methodology",
+      "Github",
+    ],
+  },
+  {
+    title: "Full Stack Developer",
     company: "Accelist Lentera Indonesia",
     date: "February 2025 - February 2026",
     description: [
@@ -83,134 +100,258 @@ const workExperiences: WorkExperience[] = [
 
 const About: React.FC = () => {
   return (
-    <div id="about" className="w-full bg-black px-12 scroll-mt-24 py-4">
-      <div className="flex justify-center items-center">
-        <h1 className="text-3xl md:text-5xl font-bold text-white">About</h1>
-      </div>
+    <section
+      id="about"
+      className="
+        relative
+        bg-[#050505]
+        text-white
+        pt-12
+        px-6
+        md:px-12
+        overflow-hidden
+        scroll-mt-20
+      "
+    >
+      {/* Glow */}
+      <div className="absolute top-40 left-20 w-72 h-72 bg-[#3D8D7A]/10 blur-[140px] rounded-full" />
+      <div className="absolute bottom-20 right-20 w-96 h-96 bg-[#3D8D7A]/10 blur-[180px] rounded-full" />
 
-      <p className="flex flex-col justify-center items-center text-white mt-5 md:mx-5 text-justify text-lg md:text-xl">
-        As Computer Science undergraduate at BINUS University with hands-on
-        experience as a Full Stack Developer Intern, specializing in
-        React/Next.js (TypeScript) and ASP.NET Core Web API. Experienced in
-        developing responsive web applications, fixing production bugs, and
-        ensuring system stability and software quality. Have strong analytical
-        and problem-solving skills, with attention to detail and a
-        quality-driven mindset. Adaptable to new technologies and experienced in
-        collaborative team environments. Passionate about continuous learning
-        and building reliable, impactful digital solutions.
-      </p>
+      <div className="relative z-10 max-w-6xl mx-auto">
+        {/* Heading */}
+        <div className="text-center mb-10">
+          <p className="text-3xl md:text-4xl text-[#3D8D7A] tracking-[2px] uppercase font-semibold">
+            About Me
+          </p>
 
-      <div className="h-1 mt-7 mx-5 bg-white"></div>
+          <p className="text-white mt-5 max-w-5xl mx-auto text-xl">
+            Passionate Full Stack Developer focused on building scalable web
+            applications with modern technologies.
+          </p>
+        </div>
 
-      <div className="text-white mt-8">
-        <h3 className="mt-8 mb-8 text-3xl md:text-5xl font-bold text-center">
-          Work Experience
-        </h3>
+        {/* Intro Card */}
+        <div
+          className="
+            bg-[#0D1117]
+            border
+            border-[#3D8D7A]/20
+            rounded-3xl
+            p-8
+            md:p-12
+            mb-16
+          "
+        >
+          <div className="grid lg:grid-cols-2 gap-10">
+            <div>
+              <h3 className="text-3xl font-bold mb-5">Full Stack Developer</h3>
 
-        <div className="max-w-5xl mx-auto mt-5">
-          <ul className="relative border-l border-gray-500 ml-4">
-            {workExperiences.map((item, index) => (
-              <li key={index} className="mb-8 ml-8 relative">
-                {/* Bullet */}
-                <span className="absolute -left-10 top-0 w-4 h-4 bg-white rounded-full shadow-md"></span>
+              <p className="text-gray-300 leading-relaxed">
+                Computer Science undergraduate at BINUS University with
+                experience building modern web applications using ASP.NET Core,
+                Next.js, TypeScript, PostgreSQL and React. Experienced in bug
+                fixing, feature development, software maintenance, and
+                collaborative agile environments.
+              </p>
+            </div>
 
-                {/* Content Card */}
-                <div className="bg-neutral-900 p-6 rounded-xl shadow-lg">
-                  <h3 className="text-xl md:text-2xl font-semibold">
-                    {item.title}
-                  </h3>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-black rounded-2xl p-6">
+                <h4 className="text-4xl font-bold text-[#3D8D7A]">5</h4>
+                <p className="text-gray-400">Completed Projects</p>
+              </div>
 
-                  <p className="text-gray-400 mt-1">
-                    {item.company} | {item.date}
-                  </p>
+              <div className="bg-black rounded-2xl p-6">
+                <h4 className="text-4xl font-bold text-[#3D8D7A]">1</h4>
+                <p className="text-gray-400">Internship</p>
+              </div>
 
-                  {item.description && (
-                    <ul className="mt-3 text-gray-300 list-disc list-inside space-y-2 text-justify">
-                      {item.description.map((desc, i) => (
-                        <li key={i}>{desc}</li>
+              <div className="bg-black rounded-2xl p-6">
+                <h4 className="text-4xl font-bold text-[#3D8D7A]">100+</h4>
+                <p className="text-gray-400">Bugs Fixed</p>
+              </div>
+
+              <div className="bg-black rounded-2xl p-6">
+                <h4 className="text-4xl font-bold text-[#3D8D7A]">4+</h4>
+                <p className="text-gray-400">Years Learning</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Work Experience */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <p className="text-xl md:text-2xl text-[#3D8D7A] tracking-[2px] uppercase font-semibold">
+              Experience
+            </p>
+
+            <h2 className="text-4xl md:text-5xl font-bold mt-3">
+              Professional Journey
+            </h2>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <ul className="relative border-l border-[#3D8D7A]/30">
+              {workExperiences.map((item, index) => (
+                <li key={index} className="mb-12 ml-8 relative">
+                  <span
+                    className="
+                      absolute
+                      -left-[42px]
+                      top-0
+                      w-5
+                      h-5
+                      rounded-full
+                      bg-[#3D8D7A]
+                    "
+                  />
+
+                  <div
+                    className="
+                      bg-[#0D1117]
+                      border
+                      border-[#3D8D7A]/20
+                      rounded-2xl
+                      p-8
+                    "
+                  >
+                    <h3 className="text-2xl font-bold">{item.title}</h3>
+
+                    <p className="text-[#3D8D7A] mt-2">{item.company}</p>
+
+                    <p className="text-gray-500">{item.date}</p>
+
+                    <ul className="mt-5 space-y-3 text-gray-300">
+                      {item.description?.map((desc, i) => (
+                        <li key={i}>• {desc}</li>
                       ))}
                     </ul>
-                  )}
 
-                  {item.skills && (
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {item.skills.map((skill, i) => (
+                    <div className="flex flex-wrap gap-2 mt-6">
+                      {item.skills?.map((skill, i) => (
                         <span
                           key={i}
-                          className="bg-gray-700 px-3 py-1 rounded-full text-sm"
+                          className="
+                            px-3
+                            py-2
+                            rounded-full
+                            bg-[#3D8D7A]/10
+                            border
+                            border-[#3D8D7A]/30
+                            text-[#A3D1C6]
+                            text-sm
+                          "
                         >
                           {skill}
                         </span>
                       ))}
                     </div>
-                  )}
-                </div>
-              </li>
-            ))}
-          </ul>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
 
-      <div className="text-white">
-        <h3 className="mt-8 mb-8 text-3xl md:text-5xl font-bold text-center">
-          Organizational Experience
-        </h3>
+        {/* Organization */}
+        <div>
+          <div className="text-center mb-12">
+            <p className="text-xl md:text-2xl text-[#3D8D7A] tracking-[2px] uppercase font-semibold">
+              Leadership
+            </p>
 
-        <div className="max-w-5xl mx-auto mt-5">
-          <ul className="relative border-l border-gray-500 ml-4">
-            {experiences.map((item, index) => (
-              <li key={index} className="mb-8 ml-8 relative">
-                {/* Bullet */}
-                <span className="absolute -left-10 top-0 w-4 h-4 bg-white rounded-full shadow-md"></span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-3">
+              Organizational Experience
+            </h2>
+          </div>
 
-                {/* Content Card */}
-                <div className="bg-neutral-900 p-6 rounded-xl shadow-lg">
-                  <h3 className="text-xl md:text-2xl font-semibold">
-                    {item.title}
-                  </h3>
+          <div className="max-w-5xl mx-auto">
+            <ul className="relative border-l border-[#3D8D7A]/30">
+              {experiences.map((item, index) => (
+                <li key={index} className="mb-12 ml-8 relative">
+                  <span
+                    className="
+              absolute
+              -left-[42px]
+              top-0
+              w-5
+              h-5
+              rounded-full
+              bg-[#3D8D7A]
+            "
+                  />
 
-                  <p className="text-gray-400 mt-1">{item.date}</p>
+                  <div
+                    className="
+              bg-[#0D1117]
+              border
+              border-[#3D8D7A]/20
+              rounded-2xl
+              p-8
+            "
+                  >
+                    <h3 className="text-2xl font-bold">{item.title}</h3>
 
-                  {item.description && (
-                    <p className="mt-3 text-gray-300 text-justify">
+                    <p className="text-[#3D8D7A] mt-2">
+                      BINUS Catholic Student Association
+                    </p>
+
+                    <p className="text-gray-500">{item.date}</p>
+
+                    <p className="text-gray-300 mt-5 leading-relaxed">
                       {item.description}
                     </p>
-                  )}
 
-                  {item.skills && (
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {item.skills.map((skill, i) => (
+                    <div className="flex flex-wrap gap-2 mt-6">
+                      {item.skills?.map((skill, i) => (
                         <span
                           key={i}
-                          className="bg-gray-700 px-3 py-1 rounded-full text-sm"
+                          className="
+                    px-3
+                    py-2
+                    rounded-full
+                    bg-[#3D8D7A]/10
+                    border
+                    border-[#3D8D7A]/30
+                    text-[#A3D1C6]
+                    text-sm
+                  "
                         >
                           {skill}
                         </span>
                       ))}
                     </div>
-                  )}
 
-                  {item.images && (
-                    <div className="mt-5 flex flex-col md:flex-row gap-6">
-                      {item.images.map((img, i) => (
-                        <Image
-                          key={i}
-                          src={img}
-                          alt={item.title}
-                          width={400}
-                          height={300}
-                          className="rounded-lg object-cover"
-                        />
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </li>
-            ))}
-          </ul>
+                    {item.images && (
+                      <div className="grid md:grid-cols-2 gap-5 mt-8">
+                        {item.images.map((img, i) => (
+                          <Image
+                            key={i}
+                            src={img}
+                            alt={item.title}
+                            width={400}
+                            height={250}
+                            className="
+                      w-full
+                      h-56
+                      object-cover
+                      rounded-xl
+                      border
+                      border-white/10
+                    "
+                          />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

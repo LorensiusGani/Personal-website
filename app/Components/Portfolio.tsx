@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Tools from "./Tools";
+import SkillSlider from "./SkillSlider";
+import ToolSlider from "./ToolSlider";
 
 type Project = {
   title: string;
@@ -28,7 +29,13 @@ const projects: Project[] = [
     title: "Vetch",
     description: "Next JS, Tailwind CSS, Express JS, PostgreSQL",
     image: "/Assets/Vetch-1.png",
-    demo: "https://vetch-webagent.vercel.app//",
+    demo: "https://vetch-webagent.vercel.app/",
+  },
+  {
+    title: "Maung - Landing Page",
+    description: "Go, HTMX, Tailwind CSS",
+    image: "/Assets/Maung-landing-page.png",
+    demo: "https://maung-landing-page.vercel.app/",
   },
 ];
 
@@ -51,14 +58,17 @@ export default function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="bg-black text-white px-6 md:px-20 py-6 scroll-mt-24"
+      className="bg-black text-white px-6 md:px-20 py-6 scroll-mt-20"
     >
       {/* ================= PROJECT SECTION ================= */}
-      <div className="flex justify-center items-center mb-10">
-        <h1 className="text-3xl md:text-5xl font-bold">Portfolio Project</h1>
+      <div className="text-center mb-10">
+        <p className="text-xl md:text-2xl text-[#3D8D7A] tracking-[2px] uppercase font-semibold">
+          Portfolio
+        </p>
+        <h2 className="text-4xl md:text-5xl font-bold mt-3">Project</h2>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
         {projects.map((project, index) => (
           <div
             key={index}
@@ -88,61 +98,15 @@ export default function Portfolio() {
             <div className="p-6">
               <h2 className="text-2xl font-semibold">{project.title}</h2>
               <p className="text-gray-400 mt-2">{project.description}</p>
-
-              <div className="flex gap-4 mt-4">
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 hover:underline"
-                  >
-                    GitHub
-                  </a>
-                )}
-                {project.figma && (
-                  <a
-                    href={project.figma}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-pink-400 hover:underline"
-                  >
-                    Figma
-                  </a>
-                )}
-              </div>
             </div>
           </div>
         ))}
       </div>
 
       {/* ================= SKILL SECTION ================= */}
-      <div className="text-center py-10">
-        <h1 className="text-3xl md:text-5xl font-bold">Skills</h1>
-      </div>
-
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 max-w-6xl mx-auto">
-        {skills.map((skill, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-2xl p-6 flex flex-col items-center hover:scale-105 transition duration-300 shadow-md"
-          >
-            <div className="w-30 h-30 flex items-center justify-center">
-              <Image
-                src={skill.image}
-                alt={skill.name}
-                width={150}
-                height={150}
-                className="object-fill max-h-full max-w-full"
-              />
-            </div>
-            <h3 className="text-black mt-4 text-xl font-semibold text-center">
-              {skill.name}
-            </h3>
-          </div>
-        ))}
-      </div>
-      <Tools />
+      <SkillSlider />
+      {/* ================= TOOL SECTION ================= */}
+      <ToolSlider />
     </section>
   );
 }
