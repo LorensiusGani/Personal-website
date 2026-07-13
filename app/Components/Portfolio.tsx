@@ -37,6 +37,18 @@ const projects: Project[] = [
     image: "/Assets/Maung-landing-page.png",
     demo: "https://maung-landing-page.vercel.app/",
   },
+  {
+    title: "Maung Stock Management",
+    description: "Laravel, Tailwind CSS, PostgreSQL",
+    image: "/Assets/Maung-stock.png",
+    demo: "https://stock.maung-prod.web.id/",
+  },
+  {
+    title: "Maung Games Account Manager",
+    description: "Next JS, Go, Tailwind CSS, PostgreSQL",
+    image: "/Assets/Maung-account.png",
+    demo: "https://auth.maung-prod.web.id/",
+  },
 ];
 
 const skills: Skill[] = [
