@@ -42,6 +42,7 @@ const Navbar = () => {
             href="#home"
             className="
               text-gray-300
+              font-bold
               hover:text-white
               transition
             "
@@ -53,6 +54,7 @@ const Navbar = () => {
             href="#about"
             className="
               text-gray-300
+              font-bold
               hover:text-white
               transition
             "
@@ -64,6 +66,7 @@ const Navbar = () => {
             href="#portfolio"
             className="
               text-gray-300
+              font-bold
               hover:text-white
               transition
             "
