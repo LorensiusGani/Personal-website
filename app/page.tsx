@@ -1,6 +1,7 @@
-import SocialMedia from "./Components/SocialMedia";
+//import SocialMedia from "./Components/SocialMedia";
 import About from "./Components/About";
 import Portfolio from "./Components/Portfolio";
+import Footer from "./Components/Footer";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
           pt-24
         "
       >
-        <SocialMedia />
+        {/* <SocialMedia /> */}
 
         <div
           className="relative z-10 max-w-7xl mx-auto px-6
@@ -104,7 +105,7 @@ export default function Home() {
                     font-semibold
                   "
                 >
-                  View Resume
+                  View CV
                 </a>
 
                 <a
@@ -155,6 +156,7 @@ export default function Home() {
 
       <About />
       <Portfolio />
+      <Footer />
     </>
   );
 }

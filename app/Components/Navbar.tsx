@@ -76,6 +76,7 @@ const Navbar = () => {
 
           <a
             href="/CV/CV-Lorensius-Bernard-Gani.pdf"
+            download="CV-Lorensius-Bernard-Gani.pdf"
             target="_blank"
             className="
               px-5
@@ -88,7 +89,7 @@ const Navbar = () => {
               transition
             "
           >
-            Resume
+            Download CV
           </a>
         </nav>
 
@@ -139,6 +140,7 @@ const Navbar = () => {
 
             <a
               href="/CV/CV-Lorensius-Bernard-Gani.pdf"
+              download="CV-Lorensius-Bernard-Gani.pdf"
               target="_blank"
               className="
                 px-6
@@ -149,7 +151,7 @@ const Navbar = () => {
                 font-medium
               "
             >
-              Resume
+              Download CV
             </a>
           </div>
         </div>

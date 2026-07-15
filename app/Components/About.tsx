@@ -16,6 +16,15 @@ type WorkExperience = {
   skills?: string[];
 };
 
+// type Education = {
+//   degree: string;
+//   institution: string;
+//   date: string;
+//   gpa?: string;
+//   description?: string;
+//   courses?: string[];
+// };
+
 const experiences: Experience[] = [
   {
     title:
@@ -98,6 +107,21 @@ const workExperiences: WorkExperience[] = [
   },
 ];
 
+// const educations: Education[] = [
+//   {
+//     degree: "Bachelor of Computer Science",
+//     institution: "BINUS University",
+//     date: "Aug 2022 - Aug 2026 (Expected)",
+//     gpa: "3.7 / 4.00",
+//     description:
+//       "Focused on software engineering and web development, with hands-on experience building full stack applications through coursework and independent projects.",
+//     courses: [
+//       "Web Programming",
+//       "Database Systems",
+//     ],
+//   },
+// ];
+
 const About: React.FC = () => {
   return (
     <section
@@ -120,7 +144,7 @@ const About: React.FC = () => {
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-10">
-          <p className="text-3xl md:text-4xl text-[#3D8D7A] tracking-[2px] uppercase font-semibold">
+          <p className="text-3xl md:text-4xl text-[#3D8D7A] tracking-[2px] uppercase font-bold">
             About Me
           </p>
 
@@ -130,22 +154,22 @@ const About: React.FC = () => {
           </p>
         </div>
 
-        {/* Intro Card */}
+        {/* Intro Card (About + Stats + Education) */}
         <div
           className="
-            bg-[#0D1117]
-            border
-            border-[#3D8D7A]/20
-            rounded-3xl
-            p-8
-            md:p-12
-            mb-16
-          "
+    bg-[#0D1117]
+    border
+    border-[#3D8D7A]/20
+    rounded-3xl
+    p-8
+    md:p-12
+    mb-16
+  "
         >
-          <div className="grid lg:grid-cols-2 gap-10">
-            <div>
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Deskripsi */}
+            <div className="lg:col-span-1">
               <h3 className="text-3xl font-bold mb-5">Full Stack Developer</h3>
-
               <p className="text-gray-300 leading-relaxed">
                 Computer Science undergraduate at BINUS University with
                 experience building modern web applications using ASP.NET Core,
@@ -155,25 +179,47 @@ const About: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            {/* Stats */}
+            <div className="lg:col-span-1 grid grid-cols-2 gap-4">
               <div className="bg-black rounded-2xl p-6">
                 <h4 className="text-4xl font-bold text-[#3D8D7A]">5</h4>
-                <p className="text-gray-400">Completed Projects</p>
+                <p className="text-white">Completed Projects</p>
               </div>
-
               <div className="bg-black rounded-2xl p-6">
                 <h4 className="text-4xl font-bold text-[#3D8D7A]">1</h4>
-                <p className="text-gray-400">Internship</p>
+                <p className="text-white">Internship</p>
               </div>
-
               <div className="bg-black rounded-2xl p-6">
                 <h4 className="text-4xl font-bold text-[#3D8D7A]">100+</h4>
-                <p className="text-gray-400">Bugs Fixed</p>
+                <p className="text-white">Bugs Fixed</p>
               </div>
-
               <div className="bg-black rounded-2xl p-6">
                 <h4 className="text-4xl font-bold text-[#3D8D7A]">4+</h4>
-                <p className="text-gray-400">Years Learning</p>
+                <p className="text-white">Years Learning</p>
+              </div>
+            </div>
+
+            {/* Education */}
+            <div className="lg:col-span-1">
+              <div className="bg-black rounded-2xl p-6 h-full flex flex-col">
+                <p className="text-[#3D8D7A] text-base uppercase tracking-[2px] font-bold mb-3">
+                  Education
+                </p>
+
+                <h4 className="text-xl font-bold">
+                  Bachelor of Computer Science
+                </h4>
+                <p className="text-[#A3D1C6] mt-1">BINUS University</p>
+                <p className="text-white text-sm">Aug 2022 - Aug 2026</p>
+
+                <div className="flex items-center gap-2 mt-4">
+                  <span className="text-2xl font-semibold text-[#3D8D7A]">
+                    3.66
+                  </span>
+                  <span className="text-white text-2xl font-semibold">
+                    / 4.00 GPA
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -220,7 +266,7 @@ const About: React.FC = () => {
 
                     <p className="text-[#3D8D7A] mt-2">{item.company}</p>
 
-                    <p className="text-gray-500">{item.date}</p>
+                    <p className="text-white">{item.date}</p>
 
                     <ul className="mt-5 space-y-3 text-gray-300">
                       {item.description?.map((desc, i) => (
@@ -297,7 +343,7 @@ const About: React.FC = () => {
                       BINUS Catholic Student Association
                     </p>
 
-                    <p className="text-gray-500">{item.date}</p>
+                    <p className="text-white">{item.date}</p>
 
                     <p className="text-gray-300 mt-5 leading-relaxed">
                       {item.description}
