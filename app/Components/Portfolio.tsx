@@ -115,12 +115,12 @@ export default function Portfolio() {
 
               {project.demo && (
                 <>
-                  {/* Full-card hover overlay (Desktop) */}
+                  {/* Full-card hover overlay */}
                   <a
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="absolute inset-0 hidden md:flex items-center justify-center gap-2 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300"
+                    className="absolute inset-0 flex items-center justify-center gap-2 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300"
                   >
                     <ExternalLinkIcon className="w-5 h-5" />
                     <span className="text-lg font-bold">Visit Website</span>
@@ -131,33 +131,7 @@ export default function Portfolio() {
 
             <div className="p-6 flex-1 flex flex-col justify-between">
               <div>
-                <div className="flex items-center justify-between gap-3">
-                  <h3 className="text-xl sm:text-2xl font-semibold">{project.title}</h3>
-
-                  {project.demo && (
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Visit ${project.title}`}
-                      className="
-                        p-2.5
-                        rounded-xl
-                        bg-[#3D8D7A]/15
-                        hover:bg-[#3D8D7A]/30
-                        text-[#3D8D7A]
-                        hover:text-[#A3D1C6]
-                        transition
-                        shrink-0
-                        flex
-                        items-center
-                        justify-center
-                      "
-                    >
-                      <ExternalLinkIcon className="w-5 h-5" />
-                    </a>
-                  )}
-                </div>
+                <h3 className="text-xl sm:text-2xl font-semibold">{project.title}</h3>
                 <p className="text-gray-400 mt-2 text-sm sm:text-base">{project.description}</p>
               </div>
             </div>
