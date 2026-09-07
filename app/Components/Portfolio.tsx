@@ -88,7 +88,7 @@ export default function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="bg-black text-white px-6 md:px-20 py-6 scroll-mt-20"
+      className="bg-black text-white px-6 sm:px-10 lg:px-16 py-10 scroll-mt-20"
     >
       {/* ================= PROJECT SECTION ================= */}
       <div className="text-center mb-10">
@@ -98,13 +98,13 @@ export default function Portfolio() {
         <h2 className="text-4xl md:text-5xl font-bold mt-3">Project</h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 max-w-6xl mx-auto">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-neutral-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300"
+            className="bg-neutral-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 flex flex-col"
           >
-            <div className="relative group">
+            <div className="relative group aspect-[16/10] overflow-hidden bg-neutral-800">
               <Image
                 src={project.image}
                 alt={project.title}
@@ -115,36 +115,51 @@ export default function Portfolio() {
 
               {project.demo && (
                 <>
-                  {/* Full-card hover overlay */}
+                  {/* Full-card hover overlay (Desktop) */}
                   <a
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="absolute inset-0 flex items-center justify-center gap-2 bg-black/60 opacity-0 group-hover:opacity-100 transition"
+                    className="absolute inset-0 hidden md:flex items-center justify-center gap-2 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300"
                   >
                     <ExternalLinkIcon className="w-5 h-5" />
-                    <span className="text-xl font-bold">Visit Website</span>
+                    <span className="text-lg font-bold">Visit Website</span>
                   </a>
                 </>
               )}
             </div>
 
-            <div className="p-6">
-              <div className="flex items-center justify-between gap-3">
-                <h2 className="text-2xl font-semibold">{project.title}</h2>
+            <div className="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between gap-3">
+                  <h3 className="text-xl sm:text-2xl font-semibold">{project.title}</h3>
 
-                {project.demo && (
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Visit ${project.title}`}
-                    className="text-[#3D8D7A] hover:text-[#A3D1C6] transition shrink-0"
-                  >
-                  </a>
-                )}
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit ${project.title}`}
+                      className="
+                        p-2.5
+                        rounded-xl
+                        bg-[#3D8D7A]/15
+                        hover:bg-[#3D8D7A]/30
+                        text-[#3D8D7A]
+                        hover:text-[#A3D1C6]
+                        transition
+                        shrink-0
+                        flex
+                        items-center
+                        justify-center
+                      "
+                    >
+                      <ExternalLinkIcon className="w-5 h-5" />
+                    </a>
+                  )}
+                </div>
+                <p className="text-gray-400 mt-2 text-sm sm:text-base">{project.description}</p>
               </div>
-              <p className="text-gray-400 mt-2">{project.description}</p>
             </div>
           </div>
         ))}

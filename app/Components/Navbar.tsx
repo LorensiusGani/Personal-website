@@ -37,7 +37,7 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-10">
           <a
             href="#home"
             className="
@@ -141,6 +141,7 @@ const Navbar = () => {
             <a
               href="/CV/CV - Lorensius Bernard Gani - updated.pdf"
               download="CV - Lorensius Bernard Gani - updated.pdf"
+              onClick={() => setNav(false)}
               target="_blank"
               className="
                 px-6

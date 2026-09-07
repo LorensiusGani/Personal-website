@@ -157,20 +157,22 @@ const About: React.FC = () => {
         {/* Intro Card (About + Stats + Education) */}
         <div
           className="
-    bg-[#0D1117]
-    border
-    border-[#3D8D7A]/20
-    rounded-3xl
-    p-8
-    md:p-12
-    mb-16
-  "
+            bg-[#0D1117]
+            border
+            border-[#3D8D7A]/20
+            rounded-3xl
+            p-6
+            sm:p-8
+            md:p-10
+            lg:p-12
+            mb-16
+          "
         >
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Deskripsi */}
             <div className="lg:col-span-1">
-              <h3 className="text-3xl font-bold mb-5">Full Stack Developer</h3>
-              <p className="text-gray-300 leading-relaxed">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-5">Full Stack Developer</h3>
+              <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
                 Computer Science undergraduate at BINUS University with
                 experience building modern web applications using ASP.NET Core,
                 Next.js, TypeScript, PostgreSQL and React. Experienced in bug
@@ -180,43 +182,43 @@ const About: React.FC = () => {
             </div>
 
             {/* Stats */}
-            <div className="lg:col-span-1 grid grid-cols-2 gap-4">
-              <div className="bg-black rounded-2xl p-6">
-                <h4 className="text-4xl font-bold text-[#3D8D7A]">5</h4>
-                <p className="text-white">Completed Projects</p>
+            <div className="lg:col-span-1 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3 sm:gap-4">
+              <div className="bg-black rounded-2xl p-4 sm:p-5 flex flex-col justify-center">
+                <h4 className="text-3xl sm:text-4xl font-bold text-[#3D8D7A]">5</h4>
+                <p className="text-white text-xs sm:text-sm mt-1">Completed Projects</p>
               </div>
-              <div className="bg-black rounded-2xl p-6">
-                <h4 className="text-4xl font-bold text-[#3D8D7A]">1</h4>
-                <p className="text-white">Internship</p>
+              <div className="bg-black rounded-2xl p-4 sm:p-5 flex flex-col justify-center">
+                <h4 className="text-3xl sm:text-4xl font-bold text-[#3D8D7A]">1</h4>
+                <p className="text-white text-xs sm:text-sm mt-1">Internship</p>
               </div>
-              <div className="bg-black rounded-2xl p-6">
-                <h4 className="text-4xl font-bold text-[#3D8D7A]">100+</h4>
-                <p className="text-white">Bugs Fixed</p>
+              <div className="bg-black rounded-2xl p-4 sm:p-5 flex flex-col justify-center">
+                <h4 className="text-3xl sm:text-4xl font-bold text-[#3D8D7A]">100+</h4>
+                <p className="text-white text-xs sm:text-sm mt-1">Bugs Fixed</p>
               </div>
-              <div className="bg-black rounded-2xl p-6">
-                <h4 className="text-4xl font-bold text-[#3D8D7A]">4+</h4>
-                <p className="text-white">Years Learning</p>
+              <div className="bg-black rounded-2xl p-4 sm:p-5 flex flex-col justify-center">
+                <h4 className="text-3xl sm:text-4xl font-bold text-[#3D8D7A]">4+</h4>
+                <p className="text-white text-xs sm:text-sm mt-1">Years Learning</p>
               </div>
             </div>
 
             {/* Education */}
             <div className="lg:col-span-1">
-              <div className="bg-black rounded-2xl p-6 h-full flex flex-col">
-                <p className="text-[#3D8D7A] text-base uppercase tracking-[2px] font-bold mb-3">
+              <div className="bg-black rounded-2xl p-6 h-full flex flex-col justify-center">
+                <p className="text-[#3D8D7A] text-sm sm:text-base uppercase tracking-[2px] font-bold mb-2 sm:mb-3">
                   Education
                 </p>
 
-                <h4 className="text-xl font-bold">
+                <h4 className="text-lg sm:text-xl font-bold">
                   Bachelor of Computer Science
                 </h4>
-                <p className="text-[#A3D1C6] mt-1">BINUS University</p>
-                <p className="text-white text-sm">Aug 2022 - Aug 2026</p>
+                <p className="text-[#A3D1C6] mt-1 text-sm sm:text-base">BINUS University</p>
+                <p className="text-gray-400 text-xs sm:text-sm">Aug 2022 - Aug 2026</p>
 
                 <div className="flex items-center gap-2 mt-4">
-                  <span className="text-2xl font-semibold text-[#3D8D7A]">
+                  <span className="text-xl sm:text-2xl font-semibold text-[#3D8D7A]">
                     3.66
                   </span>
-                  <span className="text-white text-2xl font-semibold">
+                  <span className="text-white text-xl sm:text-2xl font-semibold">
                     / 4.00 GPA
                   </span>
                 </div>
@@ -259,7 +261,8 @@ const About: React.FC = () => {
                       border
                       border-[#3D8D7A]/20
                       rounded-2xl
-                      p-8
+                      p-6
+                      sm:p-8
                     "
                   >
                     <h3 className="text-2xl font-bold">{item.title}</h3>
@@ -330,12 +333,13 @@ const About: React.FC = () => {
 
                   <div
                     className="
-              bg-[#0D1117]
-              border
-              border-[#3D8D7A]/20
-              rounded-2xl
-              p-8
-            "
+                      bg-[#0D1117]
+                      border
+                      border-[#3D8D7A]/20
+                      rounded-2xl
+                      p-6
+                      sm:p-8
+                    "
                   >
                     <h3 className="text-2xl font-bold">{item.title}</h3>
 

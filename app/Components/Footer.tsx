@@ -150,6 +150,7 @@ const Footer: React.FC = () => {
                 href="https://www.linkedin.com/in/lorensius-bernard-gani"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
                 className="
                   w-10 h-10
                   flex items-center justify-center
@@ -157,16 +158,18 @@ const Footer: React.FC = () => {
                   bg-black
                   border border-[#3D8D7A]/20
                   hover:bg-[#3D8D7A]/10
+                  hover:border-[#3D8D7A]/50
                   transition
                 "
               >
-                <FaLinkedin size={32} />
+                <FaLinkedin size={20} />
               </a>
 
               <a
                 href="https://github.com/LorensiusGani"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub"
                 className="
                   w-10 h-10
                   flex items-center justify-center
@@ -174,16 +177,18 @@ const Footer: React.FC = () => {
                   bg-black
                   border border-[#3D8D7A]/20
                   hover:bg-[#3D8D7A]/10
+                  hover:border-[#3D8D7A]/50
                   transition
                 "
               >
-                <FaGithub size={32} />
+                <FaGithub size={20} />
               </a>
 
               <a
                 href="https://www.instagram.com/lorensius.gani/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
                 className="
                   w-10 h-10
                   flex items-center justify-center
@@ -191,10 +196,11 @@ const Footer: React.FC = () => {
                   bg-black
                   border border-[#3D8D7A]/20
                   hover:bg-[#3D8D7A]/10
+                  hover:border-[#3D8D7A]/50
                   transition
                 "
               >
-                <FaInstagram size={32} />
+                <FaInstagram size={20} />
               </a>
             </div>
           </div>
