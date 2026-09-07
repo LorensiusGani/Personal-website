@@ -92,7 +92,7 @@ export default function Home() {
               {/* Buttons */}
               <div className="flex gap-4 mt-6">
                 <a
-                  href="/CV/CV-Lorensius-Bernard-Gani.pdf"
+                  href="/CV/CV - Lorensius Bernard Gani - updated.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="

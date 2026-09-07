@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
             </a>
 
             <a
-              href="/Assets/Resume.pdf"
+              href="/CV/CV - Lorensius Bernard Gani - updated.pdf"
               target="_blank"
               className="
                 px-6
