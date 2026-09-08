@@ -67,12 +67,17 @@ export async function POST(request: Request) {
       );
     }
 
-    // Configure Nodemailer Transporter with Gmail SMTP
+    // Configure Nodemailer Transporter with explicit Gmail SMTP settings for serverless
+    const cleanPass = emailPass.trim().replace(/^["']|["']$/g, "").replace(/\s+/g, "");
+    const cleanUser = emailUser.trim().replace(/^["']|["']$/g, "");
+
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true, // true for 465 (SSL)
       auth: {
-        user: emailUser,
-        pass: emailPass.replace(/\s+/g, ""), // remove any spaces if copied directly
+        user: cleanUser,
+        pass: cleanPass,
       },
     });
 
@@ -82,7 +87,7 @@ export async function POST(request: Request) {
 
     // Send the email via Gmail SMTP
     await transporter.sendMail({
-      from: `"${name.trim()}" <${emailUser}>`,
+      from: `"${name.trim()}" <${cleanUser}>`,
       to: recipientEmail,
       replyTo: email.trim(),
       subject: emailSubject,
@@ -118,12 +123,14 @@ export async function POST(request: Request) {
       },
       { status: 200 }
     );
-  } catch (error) {
+  } catch (error: unknown) {
     console.error("Nodemailer error sending email:", error);
+    const errorMessage =
+      error instanceof Error ? error.message : "Failed to send email. Please check your credentials or try again later.";
     return NextResponse.json(
       {
         success: false,
-        error: "Failed to send email. Please check your credentials or try again later.",
+        error: errorMessage,
       },
       { status: 500 }
     );
