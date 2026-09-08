@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -15,21 +16,26 @@ const Navbar = () => {
         w-full
         z-50
         backdrop-blur-xl
-        bg-black/50
+        bg-white/80
+        dark:bg-black/60
         border-b
-        border-white/20
+        border-slate-200/80
+        dark:border-white/10
+        transition-colors
+        duration-300
       "
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
-        
         {/* Logo */}
         <a
           href="#home"
           className="
-            text-white
+            text-slate-900
+            dark:text-white
             text-2xl
             font-bold
             tracking-tight
+            transition-colors
           "
         >
           Lorensius Gani
@@ -37,14 +43,16 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center gap-6 lg:gap-10">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
           <a
             href="#home"
             className="
-              text-gray-300
-              font-bold
-              hover:text-white
-              transition
+              text-slate-600
+              dark:text-gray-300
+              font-semibold
+              hover:text-[#3D8D7A]
+              dark:hover:text-white
+              transition-colors
             "
           >
             Home
@@ -53,10 +61,12 @@ const Navbar = () => {
           <a
             href="#about"
             className="
-              text-gray-300
-              font-bold
-              hover:text-white
-              transition
+              text-slate-600
+              dark:text-gray-300
+              font-semibold
+              hover:text-[#3D8D7A]
+              dark:hover:text-white
+              transition-colors
             "
           >
             About
@@ -65,13 +75,43 @@ const Navbar = () => {
           <a
             href="#portfolio"
             className="
-              text-gray-300
-              font-bold
-              hover:text-white
-              transition
+              text-slate-600
+              dark:text-gray-300
+              font-semibold
+              hover:text-[#3D8D7A]
+              dark:hover:text-white
+              transition-colors
             "
           >
             Portfolio
+          </a>
+
+          <a
+            href="#github"
+            className="
+              text-slate-600
+              dark:text-gray-300
+              font-semibold
+              hover:text-[#3D8D7A]
+              dark:hover:text-white
+              transition-colors
+            "
+          >
+            Activity
+          </a>
+
+          <a
+            href="#skills"
+            className="
+              text-slate-600
+              dark:text-gray-300
+              font-semibold
+              hover:text-[#3D8D7A]
+              dark:hover:text-white
+              transition-colors
+            "
+          >
+            Skills
           </a>
 
           <a
@@ -86,20 +126,29 @@ const Navbar = () => {
               hover:bg-[#4BA08D]
               text-white
               font-medium
-              transition
+              transition-all
+              shadow-sm
+              hover:shadow-md
             "
           >
             Download CV
           </a>
+
+          {/* Theme Toggle Button */}
+          <ThemeToggle />
         </nav>
 
-        {/* Mobile Button */}
-        <button
-          onClick={() => setNav(!nav)}
-          className="md:hidden text-white"
-        >
-          {nav ? <FaTimes size={24} /> : <FaBars size={24} />}
-        </button>
+        {/* Mobile Action Group */}
+        <div className="flex items-center gap-3 md:hidden">
+          <ThemeToggle />
+          <button
+            onClick={() => setNav(!nav)}
+            aria-label="Toggle navigation menu"
+            className="text-slate-800 dark:text-white p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-neutral-800 transition-colors"
+          >
+            {nav ? <FaTimes size={22} /> : <FaBars size={22} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -107,17 +156,21 @@ const Navbar = () => {
         <div
           className="
             md:hidden
-            bg-black/95
+            bg-white/95
+            dark:bg-black/95
             backdrop-blur-xl
             border-t
-            border-white/10
+            border-slate-200
+            dark:border-white/10
+            transition-colors
+            duration-300
           "
         >
           <div className="flex flex-col items-center py-8 gap-6">
             <a
               href="#home"
               onClick={() => setNav(false)}
-              className="text-white text-lg"
+              className="text-slate-800 dark:text-white text-lg font-semibold hover:text-[#3D8D7A] transition-colors"
             >
               Home
             </a>
@@ -125,7 +178,7 @@ const Navbar = () => {
             <a
               href="#about"
               onClick={() => setNav(false)}
-              className="text-white text-lg"
+              className="text-slate-800 dark:text-white text-lg font-semibold hover:text-[#3D8D7A] transition-colors"
             >
               About
             </a>
@@ -133,9 +186,25 @@ const Navbar = () => {
             <a
               href="#portfolio"
               onClick={() => setNav(false)}
-              className="text-white text-lg"
+              className="text-slate-800 dark:text-white text-lg font-semibold hover:text-[#3D8D7A] transition-colors"
             >
               Portfolio
+            </a>
+
+            <a
+              href="#github"
+              onClick={() => setNav(false)}
+              className="text-slate-800 dark:text-white text-lg font-semibold hover:text-[#3D8D7A] transition-colors"
+            >
+              Activity
+            </a>
+
+            <a
+              href="#skills"
+              onClick={() => setNav(false)}
+              className="text-slate-800 dark:text-white text-lg font-semibold hover:text-[#3D8D7A] transition-colors"
+            >
+              Skills
             </a>
 
             <a
@@ -150,6 +219,7 @@ const Navbar = () => {
                 bg-[#3D8D7A]
                 text-white
                 font-medium
+                shadow-md
               "
             >
               Download CV

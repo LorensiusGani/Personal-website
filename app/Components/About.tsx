@@ -128,18 +128,23 @@ const About: React.FC = () => {
       id="about"
       className="
         relative
-        bg-[#050505]
-        text-white
-        pt-12
+        bg-slate-50
+        dark:bg-[#050505]
+        text-slate-900
+        dark:text-white
+        pt-16
+        pb-8
         px-6
         md:px-12
         overflow-hidden
         scroll-mt-20
+        transition-colors
+        duration-300
       "
     >
       {/* Glow */}
-      <div className="absolute top-40 left-20 w-72 h-72 bg-[#3D8D7A]/10 blur-[140px] rounded-full" />
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-[#3D8D7A]/10 blur-[180px] rounded-full" />
+      <div className="absolute top-40 left-20 w-72 h-72 bg-[#3D8D7A]/10 blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-20 right-20 w-96 h-96 bg-[#3D8D7A]/10 blur-[180px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Heading */}
@@ -148,7 +153,7 @@ const About: React.FC = () => {
             About Me
           </p>
 
-          <p className="text-white mt-5 max-w-5xl mx-auto text-xl">
+          <p className="text-slate-600 dark:text-white mt-5 max-w-5xl mx-auto text-xl">
             Passionate Full Stack Developer focused on building scalable web
             applications with modern technologies.
           </p>
@@ -157,22 +162,28 @@ const About: React.FC = () => {
         {/* Intro Card (About + Stats + Education) */}
         <div
           className="
-            bg-[#0D1117]
+            bg-white
+            dark:bg-[#0D1117]
             border
-            border-[#3D8D7A]/20
+            border-slate-200
+            dark:border-[#3D8D7A]/20
             rounded-3xl
             p-6
             sm:p-8
             md:p-10
             lg:p-12
             mb-16
+            shadow-sm
+            dark:shadow-none
+            transition-colors
+            duration-300
           "
         >
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Deskripsi */}
             <div className="lg:col-span-1">
-              <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-5">Full Stack Developer</h3>
-              <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-5 text-slate-900 dark:text-white">Full Stack Developer</h3>
+              <p className="text-slate-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
                 Computer Science undergraduate at BINUS University with
                 experience building modern web applications using ASP.NET Core,
                 Next.js, TypeScript, PostgreSQL and React. Experienced in bug
@@ -183,42 +194,42 @@ const About: React.FC = () => {
 
             {/* Stats */}
             <div className="lg:col-span-1 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3 sm:gap-4">
-              <div className="bg-black rounded-2xl p-4 sm:p-5 flex flex-col justify-center">
+              <div className="bg-slate-100 dark:bg-black border border-slate-200 dark:border-white/5 rounded-2xl p-4 sm:p-5 flex flex-col justify-center">
                 <h4 className="text-3xl sm:text-4xl font-bold text-[#3D8D7A]">5</h4>
-                <p className="text-white text-xs sm:text-sm mt-1">Completed Projects</p>
+                <p className="text-slate-700 dark:text-white text-xs sm:text-sm mt-1">Completed Projects</p>
               </div>
-              <div className="bg-black rounded-2xl p-4 sm:p-5 flex flex-col justify-center">
+              <div className="bg-slate-100 dark:bg-black border border-slate-200 dark:border-white/5 rounded-2xl p-4 sm:p-5 flex flex-col justify-center">
                 <h4 className="text-3xl sm:text-4xl font-bold text-[#3D8D7A]">1</h4>
-                <p className="text-white text-xs sm:text-sm mt-1">Internship</p>
+                <p className="text-slate-700 dark:text-white text-xs sm:text-sm mt-1">Internship</p>
               </div>
-              <div className="bg-black rounded-2xl p-4 sm:p-5 flex flex-col justify-center">
+              <div className="bg-slate-100 dark:bg-black border border-slate-200 dark:border-white/5 rounded-2xl p-4 sm:p-5 flex flex-col justify-center">
                 <h4 className="text-3xl sm:text-4xl font-bold text-[#3D8D7A]">100+</h4>
-                <p className="text-white text-xs sm:text-sm mt-1">Bugs Fixed</p>
+                <p className="text-slate-700 dark:text-white text-xs sm:text-sm mt-1">Bugs Fixed</p>
               </div>
-              <div className="bg-black rounded-2xl p-4 sm:p-5 flex flex-col justify-center">
+              <div className="bg-slate-100 dark:bg-black border border-slate-200 dark:border-white/5 rounded-2xl p-4 sm:p-5 flex flex-col justify-center">
                 <h4 className="text-3xl sm:text-4xl font-bold text-[#3D8D7A]">4+</h4>
-                <p className="text-white text-xs sm:text-sm mt-1">Years Learning</p>
+                <p className="text-slate-700 dark:text-white text-xs sm:text-sm mt-1">Years Learning</p>
               </div>
             </div>
 
             {/* Education */}
             <div className="lg:col-span-1">
-              <div className="bg-black rounded-2xl p-6 h-full flex flex-col justify-center">
+              <div className="bg-slate-100 dark:bg-black border border-slate-200 dark:border-white/5 rounded-2xl p-6 h-full flex flex-col justify-center">
                 <p className="text-[#3D8D7A] text-sm sm:text-base uppercase tracking-[2px] font-bold mb-2 sm:mb-3">
                   Education
                 </p>
 
-                <h4 className="text-lg sm:text-xl font-bold">
+                <h4 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
                   Bachelor of Computer Science
                 </h4>
-                <p className="text-[#A3D1C6] mt-1 text-sm sm:text-base">BINUS University</p>
-                <p className="text-gray-400 text-xs sm:text-sm">Aug 2022 - Aug 2026</p>
+                <p className="text-[#3D8D7A] dark:text-[#A3D1C6] font-medium mt-1 text-sm sm:text-base">BINUS University</p>
+                <p className="text-slate-500 dark:text-gray-400 text-xs sm:text-sm">Aug 2022 - Aug 2026</p>
 
                 <div className="flex items-center gap-2 mt-4">
                   <span className="text-xl sm:text-2xl font-semibold text-[#3D8D7A]">
                     3.66
                   </span>
-                  <span className="text-white text-xl sm:text-2xl font-semibold">
+                  <span className="text-slate-800 dark:text-white text-xl sm:text-2xl font-semibold">
                     / 4.00 GPA
                   </span>
                 </div>
@@ -234,7 +245,7 @@ const About: React.FC = () => {
               Experience
             </p>
 
-            <h2 className="text-4xl md:text-5xl font-bold mt-3">
+            <h2 className="text-3xl md:text-5xl font-bold mt-3 text-slate-900 dark:text-white">
               Professional Journey
             </h2>
           </div>
@@ -257,21 +268,27 @@ const About: React.FC = () => {
 
                   <div
                     className="
-                      bg-[#0D1117]
+                      bg-white
+                      dark:bg-[#0D1117]
                       border
-                      border-[#3D8D7A]/20
+                      border-slate-200
+                      dark:border-[#3D8D7A]/20
                       rounded-2xl
                       p-6
                       sm:p-8
+                      shadow-sm
+                      dark:shadow-none
+                      transition-colors
+                      duration-300
                     "
                   >
-                    <h3 className="text-2xl font-bold">{item.title}</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{item.title}</h3>
 
-                    <p className="text-[#3D8D7A] mt-2">{item.company}</p>
+                    <p className="text-[#3D8D7A] font-semibold mt-2">{item.company}</p>
 
-                    <p className="text-white">{item.date}</p>
+                    <p className="text-slate-600 dark:text-gray-400 text-sm mt-1">{item.date}</p>
 
-                    <ul className="mt-5 space-y-3 text-gray-300">
+                    <ul className="mt-5 space-y-3 text-slate-600 dark:text-gray-300">
                       {item.description?.map((desc, i) => (
                         <li key={i}>• {desc}</li>
                       ))}
@@ -283,12 +300,14 @@ const About: React.FC = () => {
                           key={i}
                           className="
                             px-3
-                            py-2
+                            py-1.5
                             rounded-full
                             bg-[#3D8D7A]/10
                             border
                             border-[#3D8D7A]/30
-                            text-[#A3D1C6]
+                            text-[#3D8D7A]
+                            dark:text-[#A3D1C6]
+                            font-medium
                             text-sm
                           "
                         >
@@ -310,7 +329,7 @@ const About: React.FC = () => {
               Leadership
             </p>
 
-            <h2 className="text-4xl md:text-5xl font-bold mt-3">
+            <h2 className="text-3xl md:text-5xl font-bold mt-3 text-slate-900 dark:text-white">
               Organizational Experience
             </h2>
           </div>
@@ -321,35 +340,41 @@ const About: React.FC = () => {
                 <li key={index} className="mb-12 ml-8 relative">
                   <span
                     className="
-              absolute
-              -left-[42px]
-              top-0
-              w-5
-              h-5
-              rounded-full
-              bg-[#3D8D7A]
-            "
+                      absolute
+                      -left-[42px]
+                      top-0
+                      w-5
+                      h-5
+                      rounded-full
+                      bg-[#3D8D7A]
+                    "
                   />
 
                   <div
                     className="
-                      bg-[#0D1117]
+                      bg-white
+                      dark:bg-[#0D1117]
                       border
-                      border-[#3D8D7A]/20
+                      border-slate-200
+                      dark:border-[#3D8D7A]/20
                       rounded-2xl
                       p-6
                       sm:p-8
+                      shadow-sm
+                      dark:shadow-none
+                      transition-colors
+                      duration-300
                     "
                   >
-                    <h3 className="text-2xl font-bold">{item.title}</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{item.title}</h3>
 
-                    <p className="text-[#3D8D7A] mt-2">
+                    <p className="text-[#3D8D7A] font-semibold mt-2">
                       BINUS Catholic Student Association
                     </p>
 
-                    <p className="text-white">{item.date}</p>
+                    <p className="text-slate-600 dark:text-gray-400 text-sm mt-1">{item.date}</p>
 
-                    <p className="text-gray-300 mt-5 leading-relaxed">
+                    <p className="text-slate-600 dark:text-gray-300 mt-5 leading-relaxed">
                       {item.description}
                     </p>
 
@@ -358,15 +383,17 @@ const About: React.FC = () => {
                         <span
                           key={i}
                           className="
-                    px-3
-                    py-2
-                    rounded-full
-                    bg-[#3D8D7A]/10
-                    border
-                    border-[#3D8D7A]/30
-                    text-[#A3D1C6]
-                    text-sm
-                  "
+                            px-3
+                            py-1.5
+                            rounded-full
+                            bg-[#3D8D7A]/10
+                            border
+                            border-[#3D8D7A]/30
+                            text-[#3D8D7A]
+                            dark:text-[#A3D1C6]
+                            font-medium
+                            text-sm
+                          "
                         >
                           {skill}
                         </span>
@@ -383,13 +410,14 @@ const About: React.FC = () => {
                             width={400}
                             height={250}
                             className="
-                      w-full
-                      h-56
-                      object-cover
-                      rounded-xl
-                      border
-                      border-white/10
-                    "
+                              w-full
+                              h-56
+                              object-cover
+                              rounded-xl
+                              border
+                              border-slate-200
+                              dark:border-white/10
+                            "
                           />
                         ))}
                       </div>

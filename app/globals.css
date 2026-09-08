@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #050505;
-  --foreground: #ffffff;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-border: #e2e8f0;
 
   --primary: #3D8D7A;
   --secondary: #A3D1C6;
@@ -11,9 +15,21 @@
   --font-heading: var(--font-poppins);
 }
 
+.dark {
+  --background: #050505;
+  --foreground: #ffffff;
+  --card: #0D1117;
+  --card-border: rgba(61, 141, 122, 0.2);
+
+  --primary: #3D8D7A;
+  --secondary: #A3D1C6;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-border: var(--card-border);
 
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
@@ -26,10 +42,9 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-
   font-family: var(--font-body);
-
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Heading Font */
@@ -40,10 +55,11 @@ body {
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -96,4 +112,19 @@ body {
 
 .animate-scroll-right {
   animation: scroll-right 35s linear infinite;
+}
+
+/* Custom horizontal scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(61, 141, 122, 0.4);
+  border-radius: 999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(61, 141, 122, 0.7);
 }

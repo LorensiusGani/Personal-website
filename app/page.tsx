@@ -1,23 +1,29 @@
-//import SocialMedia from "./Components/SocialMedia";
 import About from "./Components/About";
 import Portfolio from "./Components/Portfolio";
+import GithubActivity from "./Components/GithubActivity";
+import SkillSlider from "./Components/SkillSlider";
+import ToolSlider from "./Components/ToolSlider";
 import Footer from "./Components/Footer";
 
 export default function Home() {
   return (
     <>
+      {/* ================= HERO SECTION ================= */}
       <section
         id="home"
         className="
           relative
           overflow-hidden
-          bg-[#0B0F14]
+          bg-slate-100/70
+          dark:bg-[#0B0F14]
+          text-slate-900
+          dark:text-white
           min-h-screen
           pt-24
+          transition-colors
+          duration-300
         "
       >
-        {/* <SocialMedia /> */}
-
         <div
           className="relative z-10 max-w-7xl mx-auto px-6
         md:px-12"
@@ -48,6 +54,8 @@ export default function Home() {
                   font-black
                   leading-[1.1]
                   tracking-tight
+                  text-slate-900
+                  dark:text-white
                 "
               >
                 Lorensius
@@ -60,7 +68,8 @@ export default function Home() {
                   md:mt-8
                   text-base
                   sm:text-lg
-                  text-gray-400
+                  text-slate-600
+                  dark:text-gray-400
                   leading-relaxed
                   max-w-2xl
                 "
@@ -73,8 +82,8 @@ export default function Home() {
               {/* Stats */}
               <div className="flex flex-wrap gap-8 mt-6">
                 <div>
-                  <h3 className="text-3xl sm:text-4xl font-bold text-white">5</h3>
-                  <p className="text-gray-500 text-sm sm:text-base">
+                  <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">5</h3>
+                  <p className="text-slate-500 dark:text-gray-400 text-sm sm:text-base">
                     Completed
                     <br />
                     Projects
@@ -82,14 +91,9 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-3xl sm:text-4xl font-bold text-white">1</h3>
-                  <p className="text-gray-500 text-sm sm:text-base">Internship</p>
+                  <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">1</h3>
+                  <p className="text-slate-500 dark:text-gray-400 text-sm sm:text-base">Internship</p>
                 </div>
-
-                {/* <div>
-                  <h3 className="text-4xl font-bold text-white">100+</h3>
-                  <p className="text-gray-500">Bugs Fixed</p>
-                </div> */}
               </div>
 
               {/* Buttons */}
@@ -106,9 +110,12 @@ export default function Home() {
                     rounded-xl
                     bg-[#3D8D7A]
                     hover:bg-[#4EA792]
-                    transition
+                    text-white
+                    transition-all
                     font-semibold
                     text-center
+                    shadow-md
+                    hover:shadow-lg
                   "
                 >
                   View CV
@@ -123,9 +130,15 @@ export default function Home() {
                     sm:py-4
                     rounded-xl
                     border
-                    border-white/10
+                    border-slate-300
+                    dark:border-white/10
+                    text-slate-800
+                    dark:text-white
                     hover:border-[#3D8D7A]
-                    transition
+                    hover:text-[#3D8D7A]
+                    dark:hover:border-[#3D8D7A]
+                    dark:hover:text-white
+                    transition-all
                     font-semibold
                     text-center
                   "
@@ -143,9 +156,12 @@ export default function Home() {
                   rounded-4xl
                   overflow-hidden
                   border
-                  border-white/10
-                  bg-[#111827]
-                  shadow-[0_0_60px_rgba(61,141,122,0.15)]
+                  border-slate-200
+                  dark:border-white/10
+                  bg-white
+                  dark:bg-[#111827]
+                  shadow-[0_0_40px_rgba(61,141,122,0.1)]
+                  dark:shadow-[0_0_60px_rgba(61,141,122,0.15)]
                   my-6
                   lg:my-0
                 "
@@ -167,8 +183,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ================= ABOUT SECTION ================= */}
       <About />
+
+      {/* ================= PORTFOLIO SECTION ================= */}
       <Portfolio />
+
+      {/* ================= GITHUB ACTIVITY SECTION ================= */}
+      <GithubActivity />
+
+      {/* ================= SKILLS & TOOLS SECTION ================= */}
+      <section
+        id="skills"
+        className="
+          bg-white
+          dark:bg-black
+          text-slate-900
+          dark:text-white
+          px-6
+          sm:px-10
+          lg:px-16
+          py-8
+          scroll-mt-20
+          transition-colors
+          duration-300
+        "
+      >
+        <SkillSlider />
+        <ToolSlider />
+      </section>
+
+      {/* ================= FOOTER ================= */}
       <Footer />
     </>
   );

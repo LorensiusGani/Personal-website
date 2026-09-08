@@ -19,8 +19,8 @@ const tools: Tool[] = [
 
 function ToolChip({ tool }: { tool: Tool }) {
   return (
-    <div className="flex items-center gap-3 bg-[#0D1117] border border-[#3D8D7A]/20 hover:border-[#3D8D7A]/60 transition-colors duration-300 rounded-2xl px-5 py-3 shrink-0">
-      <div className="w-9 h-9 flex items-center justify-center rounded-lg bg-white">
+    <div className="flex items-center gap-3 bg-white dark:bg-[#0D1117] border border-slate-200 dark:border-[#3D8D7A]/20 hover:border-[#3D8D7A]/60 dark:hover:border-[#3D8D7A]/60 shadow-sm dark:shadow-none transition-colors duration-300 rounded-2xl px-5 py-3 shrink-0">
+      <div className="w-9 h-9 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-white p-1">
         <Image
           src={tool.image}
           alt={tool.name}
@@ -29,7 +29,7 @@ function ToolChip({ tool }: { tool: Tool }) {
           className="object-contain"
         />
       </div>
-      <span className="text-base font-semibold text-gray-200 whitespace-nowrap">
+      <span className="text-base font-semibold text-slate-800 dark:text-gray-200 whitespace-nowrap">
         {tool.name}
       </span>
     </div>
@@ -43,7 +43,7 @@ export default function ToolSlider() {
         <p className="text-xl md:text-2xl text-[#3D8D7A] tracking-[2px] uppercase font-semibold mb-3">
           Workflow
         </p>
-        <h2 className="text-3xl md:text-5xl font-bold text-white">
+        <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white">
           Tools & Methodology
         </h2>
       </div>
