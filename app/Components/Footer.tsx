@@ -100,6 +100,14 @@ const Footer: React.FC = () => {
                     Skills
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="#contact"
+                    className="hover:text-[#3D8D7A] transition-colors"
+                  >
+                    Contact
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

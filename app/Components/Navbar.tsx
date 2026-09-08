@@ -115,6 +115,20 @@ const Navbar = () => {
           </a>
 
           <a
+            href="#contact"
+            className="
+              text-slate-600
+              dark:text-gray-300
+              font-semibold
+              hover:text-[#3D8D7A]
+              dark:hover:text-white
+              transition-colors
+            "
+          >
+            Contact
+          </a>
+
+          <a
             href="/CV/CV - Lorensius Bernard Gani - updated.pdf"
             download="CV - Lorensius Bernard Gani - updated.pdf"
             target="_blank"
@@ -205,6 +219,14 @@ const Navbar = () => {
               className="text-slate-800 dark:text-white text-lg font-semibold hover:text-[#3D8D7A] transition-colors"
             >
               Skills
+            </a>
+
+            <a
+              href="#contact"
+              onClick={() => setNav(false)}
+              className="text-slate-800 dark:text-white text-lg font-semibold hover:text-[#3D8D7A] transition-colors"
+            >
+              Contact
             </a>
 
             <a

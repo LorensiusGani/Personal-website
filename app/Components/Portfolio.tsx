@@ -42,6 +42,12 @@ const projects: Project[] = [
     image: "/Assets/Maung-account.png",
     demo: "https://auth.maung-prod.web.id/",
   },
+  {
+    title: "Aggre",
+    description: "Next JS, .NET, Tailwind CSS, PostgreSQL",
+    image: "/Assets/Aggre.png",
+    demo: "https://aggre.net/",
+  },
 ];
 
 // Simple external-link icon

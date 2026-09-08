@@ -42,8 +42,8 @@ export default function ContactForm() {
       newErrors.email = "Please enter a valid email address.";
     }
 
-    if (!formData.message.trim() || formData.message.trim().length < 10) {
-      newErrors.message = "Please write a message with at least 10 characters.";
+    if (!formData.message.trim() || formData.message.trim().length < 5) {
+      newErrors.message = "Please write a message with at least 5 characters.";
     }
 
     setErrors(newErrors);

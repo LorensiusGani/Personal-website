@@ -3,6 +3,7 @@ import Portfolio from "./Components/Portfolio";
 import GithubActivity from "./Components/GithubActivity";
 import SkillSlider from "./Components/SkillSlider";
 import ToolSlider from "./Components/ToolSlider";
+import ContactSection from "./Components/ContactSection";
 import Footer from "./Components/Footer";
 
 export default function Home() {
@@ -212,6 +213,9 @@ export default function Home() {
         <SkillSlider />
         <ToolSlider />
       </section>
+
+      {/* ================= CONTACT SECTION ================= */}
+      <ContactSection />
 
       {/* ================= FOOTER ================= */}
       <Footer />

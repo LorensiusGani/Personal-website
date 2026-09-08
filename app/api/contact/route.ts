@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 interface ContactRequestBody {
   name: string;
@@ -13,9 +14,9 @@ export async function POST(request: Request) {
     const body: ContactRequestBody = await request.json();
     const { name, email, subject, message, honeypot } = body;
 
-    // Honeypot check for bots
+    // Honeypot check for spam bots
     if (honeypot && honeypot.trim() !== "") {
-      // Silently discard spam without notifying the bot
+      // Silently discard spam without alerting the bot
       return NextResponse.json(
         { success: true, message: "Message received." },
         { status: 200 }
@@ -38,20 +39,21 @@ export async function POST(request: Request) {
       );
     }
 
-    if (!message || message.trim().length < 10) {
+    if (!message || message.trim().length < 5) {
       return NextResponse.json(
-        { success: false, error: "Message must be at least 10 characters long." },
+        { success: false, error: "Message must be at least 5 characters long." },
         { status: 400 }
       );
     }
 
-    const recipientEmail = process.env.CONTACT_EMAIL || "lorensiusgani08@gmail.com";
-    const resendApiKey = process.env.RESEND_API_KEY;
+    const emailUser = process.env.EMAIL_USER; // e.g. lorensiusgani08@gmail.com
+    const emailPass = process.env.EMAIL_PASS; // 16-character Google App Password
+    const recipientEmail = process.env.CONTACT_EMAIL || emailUser || "lorensiusgani08@gmail.com";
 
-    // Check if Resend API key is provided
-    if (!resendApiKey) {
+    // Demo Mode: If EMAIL_USER or EMAIL_PASS is not configured in .env
+    if (!emailUser || !emailPass) {
       console.warn(
-        "RESEND_API_KEY is not configured in .env. Message logged in demo mode:",
+        "EMAIL_USER or EMAIL_PASS is not configured in .env. Message logged in demo mode:",
         { name, email, subject, message }
       );
       return NextResponse.json(
@@ -59,53 +61,55 @@ export async function POST(request: Request) {
           success: true,
           preview: true,
           message:
-            "Demo mode: Message received locally. Configure RESEND_API_KEY in .env to deliver live emails.",
+            "Demo mode: Message received locally. Set EMAIL_USER & EMAIL_PASS in .env to deliver live emails.",
         },
         { status: 200 }
       );
     }
 
+    // Configure Nodemailer Transporter with Gmail SMTP
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: emailUser,
+        pass: emailPass.replace(/\s+/g, ""), // remove any spaces if copied directly
+      },
+    });
+
     const emailSubject = subject?.trim()
       ? `Portfolio Contact: ${subject.trim()}`
       : `New Message from ${name.trim()} (Portfolio)`;
 
-    // Send email using Resend HTTP API
-    const response = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${resendApiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: "Portfolio Contact <onboarding@resend.dev>",
-        to: [recipientEmail],
-        reply_to: email.trim(),
-        subject: emailSubject,
-        html: `
-          <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; rounded: 8px;">
-            <h2 style="color: #3D8D7A; border-bottom: 2px solid #3D8D7A; padding-bottom: 8px;">New Contact Form Message</h2>
-            <p><strong>From:</strong> ${name.trim()} (&lt;${email.trim()}&gt;)</p>
-            ${subject ? `<p><strong>Subject:</strong> ${subject.trim()}</p>` : ""}
-            <div style="margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 4px solid #3D8D7A; border-radius: 4px;">
-              <p style="white-space: pre-wrap; margin: 0;">${message.trim()}</p>
-            </div>
-            <p style="font-size: 12px; color: #888; margin-top: 30px;">This email was sent from your portfolio website contact form.</p>
+    // Send the email via Gmail SMTP
+    await transporter.sendMail({
+      from: `"${name.trim()}" <${emailUser}>`,
+      to: recipientEmail,
+      replyTo: email.trim(),
+      subject: emailSubject,
+      text: `Name: ${name.trim()}\nEmail: ${email.trim()}\nSubject: ${subject || "-"}\n\nMessage:\n${message.trim()}`,
+      html: `
+        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #1e293b; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 12px; background-color: #ffffff;">
+          <div style="border-bottom: 2px solid #3D8D7A; padding-bottom: 12px; margin-bottom: 20px;">
+            <h2 style="color: #3D8D7A; margin: 0; font-size: 20px; font-weight: 700;">📬 New Message from Portfolio</h2>
+            <p style="color: #64748b; margin: 4px 0 0 0; font-size: 13px;">Received via Lorensius Gani website contact form</p>
           </div>
-        `,
-      }),
-    });
 
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      console.error("Resend API error:", errorData);
-      return NextResponse.json(
-        {
-          success: false,
-          error: "Failed to send email via provider. Please try again later.",
-        },
-        { status: 502 }
-      );
-    }
+          <div style="margin-bottom: 16px;">
+            <p style="margin: 0 0 6px 0; font-size: 14px;"><strong>From:</strong> ${name.trim()} &lt;<a href="mailto:${email.trim()}" style="color: #0969da; text-decoration: none;">${email.trim()}</a>&gt;</p>
+            ${subject?.trim() ? `<p style="margin: 0 0 6px 0; font-size: 14px;"><strong>Subject:</strong> ${subject.trim()}</p>` : ""}
+          </div>
+
+          <div style="margin-top: 16px; padding: 16px; background-color: #f8fafc; border-left: 4px solid #3D8D7A; border-radius: 6px;">
+            <p style="white-space: pre-wrap; margin: 0; font-size: 14px; color: #334155;">${message.trim()}</p>
+          </div>
+
+          <div style="margin-top: 24px; padding-top: 12px; border-top: 1px solid #f1f5f9; font-size: 12px; color: #94a3b8; display: flex; justify-content: space-between;">
+            <span>Lorensius Gani Portfolio</span>
+            <span>💡 Click Reply to email ${name.trim()} directly</span>
+          </div>
+        </div>
+      `,
+    });
 
     return NextResponse.json(
       {
@@ -115,11 +119,11 @@ export async function POST(request: Request) {
       { status: 200 }
     );
   } catch (error) {
-    console.error("Contact API internal error:", error);
+    console.error("Nodemailer error sending email:", error);
     return NextResponse.json(
       {
         success: false,
-        error: "An unexpected error occurred. Please try again later.",
+        error: "Failed to send email. Please check your credentials or try again later.",
       },
       { status: 500 }
     );
