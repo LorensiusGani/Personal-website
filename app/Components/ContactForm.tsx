@@ -76,44 +76,44 @@ export default function ContactForm() {
     // 1. Name Validation & Profanity Check
     const trimmedName = formData.name.trim();
     if (!trimmedName || trimmedName.length < 2) {
-      newErrors.name = "Mohon masukkan nama Anda (minimal 2 karakter).";
+      newErrors.name = "Please enter your name (at least 2 characters).";
     } else if (trimmedName.length > 100) {
-      newErrors.name = "Nama tidak boleh melebihi 100 karakter.";
+      newErrors.name = "Name cannot exceed 100 characters.";
     } else if (containsProfanity(trimmedName).hasProfanity) {
-      newErrors.name = "Nama mengandung kata-kata yang tidak pantas.";
+      newErrors.name = "Name contains inappropriate language.";
     }
 
     // 2. Email Validation & Disposable Filter
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const trimmedEmail = formData.email.trim();
     if (!trimmedEmail || !emailRegex.test(trimmedEmail)) {
-      newErrors.email = "Mohon masukkan alamat email yang valid.";
+      newErrors.email = "Please enter a valid email address.";
     } else if (isDisposableEmail(trimmedEmail)) {
-      newErrors.email = "Mohon gunakan email pribadi/bisnis yang valid (bukan temporary email).";
+      newErrors.email = "Please use a valid personal or business email (disposable emails not allowed).";
     }
 
     // 3. Subject Profanity Check (if provided)
     const trimmedSubject = formData.subject.trim();
     if (trimmedSubject) {
       if (trimmedSubject.length > 150) {
-        newErrors.subject = "Subjek tidak boleh melebihi 150 karakter.";
+        newErrors.subject = "Subject cannot exceed 150 characters.";
       } else if (containsProfanity(trimmedSubject).hasProfanity) {
-        newErrors.subject = "Subjek mengandung kata-kata yang tidak pantas.";
+        newErrors.subject = "Subject contains inappropriate language.";
       }
     }
 
     // 4. Message Validation, Profanity & Spam Check
     const trimmedMessage = formData.message.trim();
     if (!trimmedMessage || trimmedMessage.length < 10) {
-      newErrors.message = "Mohon tulis pesan dengan minimal 10 karakter.";
+      newErrors.message = "Please write a message with at least 10 characters.";
     } else if (trimmedMessage.length > 2000) {
-      newErrors.message = "Pesan terlalu panjang (maksimal 2000 karakter).";
+      newErrors.message = "Message cannot exceed 2000 characters.";
     } else if (containsProfanity(trimmedMessage).hasProfanity) {
-      newErrors.message = "Pesan mengandung kata-kata yang tidak pantas. Mohon gunakan bahasa yang sopan dan profesional.";
+      newErrors.message = "Message contains inappropriate language. Please keep it respectful and professional.";
     } else {
       const spamCheck = isSpamContent(trimmedMessage, trimmedSubject);
       if (spamCheck.isSpam) {
-        newErrors.message = spamCheck.reason || "Pesan terdeteksi sebagai spam.";
+        newErrors.message = spamCheck.reason || "Message was flagged as spam.";
       }
     }
 
@@ -138,7 +138,7 @@ export default function ContactForm() {
 
     // Check cooldown
     if (cooldown > 0) {
-      setResponseMsg(`Mohon tunggu ${cooldown} detik sebelum mengirim pesan lagi.`);
+      setResponseMsg(`Please wait ${cooldown} seconds before sending another message.`);
       setStatus("error");
       return;
     }
@@ -163,11 +163,11 @@ export default function ContactForm() {
       const data = await res.json();
 
       if (!res.ok || !data.success) {
-        throw new Error(data.error || "Gagal mengirim pesan.");
+        throw new Error(data.error || "Failed to send message.");
       }
 
       setStatus("success");
-      setResponseMsg(data.message || "Pesan Anda berhasil dikirim!");
+      setResponseMsg(data.message || "Your message has been sent successfully!");
       setCooldown(COOLDOWN_DURATION);
       setFormData({
         name: "",
@@ -183,7 +183,7 @@ export default function ContactForm() {
       if (err instanceof Error) {
         setResponseMsg(err.message);
       } else {
-        setResponseMsg("Terjadi kesalahan yang tidak terduga. Silakan coba lagi.");
+        setResponseMsg("An unexpected error occurred. Please try again.");
       }
     }
   };
@@ -201,23 +201,23 @@ export default function ContactForm() {
           <FaCheckCircle size={36} />
         </div>
         <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
-          Pesan Terkirim!
+          Message Sent!
         </h3>
         <p className="text-slate-600 dark:text-gray-300 mt-2 max-w-md mx-auto text-sm sm:text-base">
-          {responseMsg || "Terima kasih telah menghubungi. Saya akan membalas pesan Anda secepat mungkin!"}
+          {responseMsg || "Thank you for reaching out. I'll get back to you as soon as possible!"}
         </p>
 
         {cooldown > 0 ? (
           <div className="mt-6 flex items-center justify-center gap-2 text-xs text-slate-500 dark:text-gray-400 bg-slate-100 dark:bg-black/40 py-2.5 px-4 rounded-xl max-w-xs mx-auto">
             <FaClock size={14} className="text-[#3D8D7A] animate-pulse" />
-            <span>Kirim pesan lagi dalam <strong>{cooldown} detik</strong></span>
+            <span>Send another message in <strong>{cooldown}s</strong></span>
           </div>
         ) : (
           <button
             onClick={resetForm}
             className="mt-6 px-6 py-2.5 rounded-xl bg-[#3D8D7A] hover:bg-[#4EA792] text-white font-semibold text-sm transition-colors cursor-pointer"
           >
-            Kirim Pesan Lain
+            Send Another Message
           </button>
         )}
       </div>
@@ -256,7 +256,7 @@ export default function ContactForm() {
             htmlFor="name"
             className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-gray-300 mb-2"
           >
-            Nama Lengkap <span className="text-[#3D8D7A]">*</span>
+            Your Name <span className="text-[#3D8D7A]">*</span>
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 dark:text-gray-500">
@@ -307,7 +307,7 @@ export default function ContactForm() {
             htmlFor="email"
             className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-gray-300 mb-2"
           >
-            Alamat Email <span className="text-[#3D8D7A]">*</span>
+            Your Email <span className="text-[#3D8D7A]">*</span>
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 dark:text-gray-500">
@@ -357,7 +357,7 @@ export default function ContactForm() {
             htmlFor="subject"
             className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-gray-300 mb-2"
           >
-            Subjek <span className="text-slate-400 text-[10px] font-normal">(Opsional)</span>
+            Subject <span className="text-slate-400 text-[10px] font-normal">(Optional)</span>
           </label>
           <input
             type="text"
@@ -366,7 +366,7 @@ export default function ContactForm() {
             maxLength={150}
             value={formData.subject}
             onChange={handleChange}
-            placeholder="Project inquiry / Peluang Kerjasama"
+            placeholder="Project inquiry / Opportunity"
             className={`
               w-full
               px-4
@@ -403,7 +403,7 @@ export default function ContactForm() {
               htmlFor="message"
               className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-gray-300"
             >
-              Pesan <span className="text-[#3D8D7A]">*</span>
+              Message <span className="text-[#3D8D7A]">*</span>
             </label>
             <span
               className={`text-[11px] ${
@@ -426,7 +426,7 @@ export default function ContactForm() {
               maxLength={2000}
               value={formData.message}
               onChange={handleChange}
-              placeholder="Halo Lorensius, saya ingin mendiskusikan project..."
+              placeholder="Hi Lorensius, I'd like to discuss a project..."
               className={`
                 w-full
                 pl-11
@@ -490,17 +490,17 @@ export default function ContactForm() {
           {status === "submitting" ? (
             <>
               <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-              <span>Mengirim pesan...</span>
+              <span>Sending message...</span>
             </>
           ) : cooldown > 0 ? (
             <>
               <FaClock size={15} />
-              <span>Tunggu {cooldown} detik</span>
+              <span>Wait {cooldown}s</span>
             </>
           ) : (
             <>
               <FaPaperPlane size={15} />
-              <span>Kirim Pesan</span>
+              <span>Send Message</span>
             </>
           )}
         </button>

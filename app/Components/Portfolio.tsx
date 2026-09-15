@@ -46,7 +46,7 @@ const projects: Project[] = [
     title: "Aggre",
     description: "Next JS, .NET, Tailwind CSS, PostgreSQL",
     image: "/Assets/Aggre.png",
-    demo: "https://aggre.net/",
+    demo: "https://aggre.co.id/",
   },
 ];
 

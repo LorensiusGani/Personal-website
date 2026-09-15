@@ -118,7 +118,7 @@ export async function POST(request: Request) {
         {
           success: false,
           error:
-            "Pesan, nama, atau subjek mengandung kata-kata yang tidak pantas. Mohon gunakan bahasa yang sopan dan profesional.",
+            "Your message, name, or subject contains inappropriate language. Please keep it respectful and professional.",
         },
         { status: 400 }
       );
@@ -132,7 +132,7 @@ export async function POST(request: Request) {
           success: false,
           error:
             spamCheck.reason ||
-            "Pesan terdeteksi sebagai spam. Mohon periksa kembali pesan Anda.",
+            "Your message was flagged as spam. Please review your message.",
         },
         { status: 400 }
       );

@@ -188,7 +188,7 @@ export function isSpamContent(
   if (urlMatches.length > 2) {
     return {
       isSpam: true,
-      reason: "Pesan mengandung terlalu banyak tautan (maksimal 2 link)."
+      reason: "Message contains too many links (maximum 2 links allowed).",
     };
   }
 
@@ -197,7 +197,7 @@ export function isSpamContent(
     if (combined.includes(keyword)) {
       return {
         isSpam: true,
-        reason: "Pesan terdeteksi mengandung konten promosi atau spam terlarang."
+        reason: "Message contains prohibited promotional or spam content.",
       };
     }
   }
@@ -207,7 +207,7 @@ export function isSpamContent(
   if (extremeRepeatPattern.test(message)) {
     return {
       isSpam: true,
-      reason: "Pesan terdeteksi memiliki format teks yang tidak wajar."
+      reason: "Message contains unusual repetitive character patterns.",
     };
   }
 
@@ -215,7 +215,7 @@ export function isSpamContent(
   if (message.trim().length > 2500) {
     return {
       isSpam: true,
-      reason: "Pesan terlalu panjang (maksimal 2500 karakter)."
+      reason: "Message is too long (maximum 2500 characters).",
     };
   }
 
@@ -285,7 +285,7 @@ export function checkRateLimit(clientIp: string): {
       return {
         allowed: false,
         retryAfterSeconds: waitSeconds,
-        message: `Mohon tunggu ${waitSeconds} detik sebelum mengirim pesan berikutnya.`
+        message: `Please wait ${waitSeconds} seconds before sending another message.`,
       };
     }
   }
@@ -299,9 +299,9 @@ export function checkRateLimit(clientIp: string): {
     return {
       allowed: false,
       retryAfterSeconds: waitSeconds,
-      message: `Terlalu banyak permintaan. Silakan coba lagi dalam ${Math.ceil(
+      message: `Too many requests. Please try again in ${Math.ceil(
         waitSeconds / 60
-      )} menit.`
+      )} minute(s).`,
     };
   }
 
