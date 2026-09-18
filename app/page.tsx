@@ -5,6 +5,7 @@ import SkillSlider from "./Components/SkillSlider";
 import ToolSlider from "./Components/ToolSlider";
 import ContactSection from "./Components/ContactSection";
 import Footer from "./Components/Footer";
+import { TerminalModal } from "./Components/Terminal";
 
 export default function Home() {
   return (
@@ -83,7 +84,7 @@ export default function Home() {
               {/* Stats */}
               <div className="flex flex-wrap gap-8 mt-6">
                 <div>
-                  <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">5</h3>
+                  <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">6</h3>
                   <p className="text-slate-500 dark:text-gray-400 text-sm sm:text-base">
                     Completed
                     <br />
@@ -92,8 +93,8 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">1</h3>
-                  <p className="text-slate-500 dark:text-gray-400 text-sm sm:text-base">Internship</p>
+                  <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">2</h3>
+                  <p className="text-slate-500 dark:text-gray-400 text-sm sm:text-base">Internships</p>
                 </div>
               </div>
 
@@ -219,6 +220,9 @@ export default function Home() {
 
       {/* ================= FOOTER ================= */}
       <Footer />
+
+      {/* ================= INTERACTIVE TERMINAL CLI ================= */}
+      <TerminalModal />
     </>
   );
 }

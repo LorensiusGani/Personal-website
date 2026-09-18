@@ -195,12 +195,12 @@ const About: React.FC = () => {
             {/* Stats */}
             <div className="lg:col-span-1 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3 sm:gap-4">
               <div className="bg-slate-100 dark:bg-black border border-slate-200 dark:border-white/5 rounded-2xl p-4 sm:p-5 flex flex-col justify-center">
-                <h4 className="text-3xl sm:text-4xl font-bold text-[#3D8D7A]">5</h4>
+                <h4 className="text-3xl sm:text-4xl font-bold text-[#3D8D7A]">6</h4>
                 <p className="text-slate-700 dark:text-white text-xs sm:text-sm mt-1">Completed Projects</p>
               </div>
               <div className="bg-slate-100 dark:bg-black border border-slate-200 dark:border-white/5 rounded-2xl p-4 sm:p-5 flex flex-col justify-center">
-                <h4 className="text-3xl sm:text-4xl font-bold text-[#3D8D7A]">1</h4>
-                <p className="text-slate-700 dark:text-white text-xs sm:text-sm mt-1">Internship</p>
+                <h4 className="text-3xl sm:text-4xl font-bold text-[#3D8D7A]">2</h4>
+                <p className="text-slate-700 dark:text-white text-xs sm:text-sm mt-1">Internships</p>
               </div>
               <div className="bg-slate-100 dark:bg-black border border-slate-200 dark:border-white/5 rounded-2xl p-4 sm:p-5 flex flex-col justify-center">
                 <h4 className="text-3xl sm:text-4xl font-bold text-[#3D8D7A]">100+</h4>

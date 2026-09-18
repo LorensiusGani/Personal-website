@@ -128,6 +128,40 @@ const Navbar = () => {
             Contact
           </a>
 
+          {/* Terminal Launcher Trigger Button */}
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent("open-terminal"))}
+            className="
+              flex items-center gap-2
+              px-3.5
+              py-2
+              rounded-full
+              bg-slate-100
+              hover:bg-slate-200
+              dark:bg-neutral-900
+              dark:hover:bg-neutral-800
+              text-slate-800
+              dark:text-sky-400
+              border
+              border-slate-300
+              dark:border-sky-500/40
+              font-mono
+              text-xs
+              font-semibold
+              transition-all
+              shadow-xs
+              hover:shadow-sm
+              cursor-pointer
+            "
+            title="Open Windows Terminal (Click or Press 'T')"
+          >
+            <span className="text-sky-500">❖</span>
+            <span>Terminal</span>
+            <kbd className="hidden lg:inline-block text-[10px] px-1.5 py-0.5 rounded bg-slate-200 dark:bg-white/10 text-slate-600 dark:text-sky-300 font-sans border border-slate-300 dark:border-white/10 font-medium">
+              Press T
+            </kbd>
+          </button>
+
           <a
             href="/CV/CV - Lorensius Bernard Gani - updated.pdf"
             download="CV - Lorensius Bernard Gani - updated.pdf"
@@ -153,7 +187,15 @@ const Navbar = () => {
         </nav>
 
         {/* Mobile Action Group */}
-        <div className="flex items-center gap-3 md:hidden">
+        <div className="flex items-center gap-2 sm:gap-3 md:hidden">
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent("open-terminal"))}
+            className="p-2 rounded-lg bg-slate-100 dark:bg-neutral-800 text-slate-800 dark:text-emerald-400 font-mono text-xs font-bold border border-slate-300 dark:border-white/10"
+            title="Open Terminal"
+            aria-label="Open Terminal"
+          >
+            &gt;_
+          </button>
           <ThemeToggle />
           <button
             onClick={() => setNav(!nav)}
@@ -228,6 +270,35 @@ const Navbar = () => {
             >
               Contact
             </a>
+
+            <button
+              onClick={() => {
+                setNav(false);
+                window.dispatchEvent(new CustomEvent("open-terminal"));
+              }}
+              className="
+                flex items-center gap-2.5
+                px-5
+                py-2.5
+                rounded-full
+                bg-slate-100
+                dark:bg-neutral-900
+                text-slate-800
+                dark:text-sky-400
+                border
+                border-slate-300
+                dark:border-sky-500/40
+                font-mono
+                text-sm
+                font-semibold
+              "
+            >
+              <span className="text-sky-500">❖</span>
+              <span>Open Terminal</span>
+              <span className="text-[11px] text-slate-500 dark:text-sky-300/70 font-normal">
+                (Click / Press T)
+              </span>
+            </button>
 
             <a
               href="/CV/CV - Lorensius Bernard Gani - updated.pdf"
