@@ -123,6 +123,14 @@ Try these Windows commands:
       name: "projects",
       type: "dir",
       children: {
+        "expensetracker.md": {
+          name: "expensetracker.md",
+          type: "file",
+          content: `# ExpenseTracker
+Stack: Next.js, TypeScript, Tailwind CSS, PostgreSQL, Prisma
+Demo : https://expensetracker-gani.vercel.app/
+Desc : Modern personal finance and budget management platform with IDR currency & multi-wallet support.`,
+        },
         "footlockre.md": {
           name: "footlockre.md",
           type: "file",
@@ -505,6 +513,7 @@ C:.
 │   └── enseval.txt
 └── projects
     ├── aggre.md
+    ├── expensetracker.md
     ├── footlockre.md
     ├── maung.md
     └── vetch.md`}
@@ -714,7 +723,7 @@ C:.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 text-xs">
               <div className="bg-white/5 border border-white/10 p-2.5 rounded-lg text-center">
-                <span className="block text-emerald-400 font-bold text-lg">6</span>
+                <span className="block text-emerald-400 font-bold text-lg">7</span>
                 <span className="text-slate-400">Projects Built</span>
               </div>
               <div className="bg-white/5 border border-white/10 p-2.5 rounded-lg text-center">
@@ -781,7 +790,22 @@ C:.
             <div className="space-y-2.5">
               <div className="border-l-2 border-[#3D8D7A] pl-3 py-0.5">
                 <div className="flex items-center gap-2">
-                  <span className="font-bold text-white text-sm">1. FootLockRE</span>
+                  <span className="font-bold text-white text-sm">1. ExpenseTracker</span>
+                  <a
+                    href="https://expensetracker-gani.vercel.app/login"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#4EA792] hover:underline flex items-center gap-1 text-xs"
+                  >
+                    Visit <FaExternalLinkAlt size={10} />
+                  </a>
+                </div>
+                <p className="text-slate-400 text-xs">Personal finance & multi-wallet budget tracker with IDR currency & Next.js.</p>
+              </div>
+
+              <div className="border-l-2 border-[#3D8D7A] pl-3 py-0.5">
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-white text-sm">2. FootLockRE</span>
                   <a
                     href="https://shoestore-olive.vercel.app/"
                     target="_blank"
@@ -796,7 +820,7 @@ C:.
 
               <div className="border-l-2 border-[#3D8D7A] pl-3 py-0.5">
                 <div className="flex items-center gap-2">
-                  <span className="font-bold text-white text-sm">2. Vetch AI Web Agent</span>
+                  <span className="font-bold text-white text-sm">3. Vetch AI Web Agent</span>
                   <a
                     href="https://vetch-webagent.vercel.app/"
                     target="_blank"
@@ -811,7 +835,7 @@ C:.
 
               <div className="border-l-2 border-[#3D8D7A] pl-3 py-0.5">
                 <div className="flex items-center gap-2">
-                  <span className="font-bold text-white text-sm">3. Maung Suite (Landing, Stock & Auth)</span>
+                  <span className="font-bold text-white text-sm">4. Maung Suite (Landing, Stock & Auth)</span>
                   <a
                     href="https://maung-landing-page.vercel.app/"
                     target="_blank"
@@ -826,7 +850,7 @@ C:.
 
               <div className="border-l-2 border-[#3D8D7A] pl-3 py-0.5">
                 <div className="flex items-center gap-2">
-                  <span className="font-bold text-white text-sm">4. Aggre</span>
+                  <span className="font-bold text-white text-sm">5. Aggre</span>
                   <a
                     href="https://aggre.co.id/"
                     target="_blank"
@@ -1014,7 +1038,7 @@ C:.
               <p><span className="text-sky-400 font-semibold w-24 inline-block">Kernel</span>: Next.js 16 + React 19</p>
               <p><span className="text-sky-400 font-semibold w-24 inline-block">Uptime</span>: 4+ Years Learning</p>
               <p><span className="text-sky-400 font-semibold w-24 inline-block">Theme</span>: {ctx.theme}</p>
-              <p><span className="text-sky-400 font-semibold w-24 inline-block">Memory</span>: 100+ Bugs Fixed / 6 Projects</p>
+              <p><span className="text-sky-400 font-semibold w-24 inline-block">Memory</span>: 100+ Bugs Fixed / 7 Projects</p>
               <div className="flex gap-1.5 pt-1.5">
                 <span className="w-3.5 h-3.5 rounded-full bg-slate-900 inline-block border border-slate-700"></span>
                 <span className="w-3.5 h-3.5 rounded-full bg-sky-500 inline-block"></span>

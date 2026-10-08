@@ -1,5 +1,6 @@
 import About from "./Components/About";
 import Portfolio from "./Components/Portfolio";
+import { projects } from "./lib/projects";
 import GithubActivity from "./Components/GithubActivity";
 import SkillSlider from "./Components/SkillSlider";
 import ToolSlider from "./Components/ToolSlider";
@@ -84,7 +85,9 @@ export default function Home() {
               {/* Stats */}
               <div className="flex flex-wrap gap-8 mt-6">
                 <div>
-                  <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">6</h3>
+                  <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
+                    {projects.length}
+                  </h3>
                   <p className="text-slate-500 dark:text-gray-400 text-sm sm:text-base">
                     Completed
                     <br />

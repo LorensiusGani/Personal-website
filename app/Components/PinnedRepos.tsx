@@ -34,6 +34,10 @@ interface PinnedReposProps {
 }
 
 const FALLBACK_DESCRIPTIONS: Record<string, string> = {
+  "ExpenseTracker":
+    "Modern, fast, and secure personal finance tracker with Indonesian Rupiah (IDR) currency and multi-wallet management.",
+  "Expense-Tracker":
+    "Modern, fast, and secure personal finance tracker with Indonesian Rupiah (IDR) currency and multi-wallet management.",
   "Personal-website":
     "Personal developer portfolio website built with Next.js 16, TypeScript, Tailwind CSS v4, and GitHub GraphQL API.",
   "Vetch-WebApp":
@@ -49,12 +53,16 @@ const FALLBACK_DESCRIPTIONS: Record<string, string> = {
 };
 
 const DEMO_LINKS: Record<string, string> = {
+  "ExpenseTracker": "https://expensetracker-gani.vercel.app/login",
+  "Expense-Tracker": "https://expensetracker-gani.vercel.app/login",
   "Personal-website": "https://personal-website-silk-seven-51.vercel.app",
   "Vetch-WebApp": "https://vetch-webagent.vercel.app/",
   "Portofolio-FootLockRE": "https://lorensiusgani.github.io/Portofolio-FootLockRE/",
 };
 
 const DEFAULT_TOPICS: Record<string, string[]> = {
+  "ExpenseTracker": ["nextjs", "typescript", "tailwind-css", "finance", "budget-tracker"],
+  "Expense-Tracker": ["nextjs", "typescript", "tailwind-css", "finance", "budget-tracker"],
   "Personal-website": ["nextjs", "typescript", "tailwind-css", "portfolio"],
   "Vetch-WebApp": ["nextjs", "express", "postgresql", "ai-agent"],
   "Portofolio-FootLockRE": ["html", "css", "javascript", "e-commerce"],
