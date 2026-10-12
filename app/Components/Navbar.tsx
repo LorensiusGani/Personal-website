@@ -163,8 +163,8 @@ const Navbar = () => {
           </button>
 
           <a
-            href="/CV/CV - Lorensius Bernard Gani - updated.pdf"
-            download="CV - Lorensius Bernard Gani - updated.pdf"
+            href="/CV/CV - Lorensius Bernard Gani.pdf"
+            download="CV - Lorensius Bernard Gani.pdf"
             target="_blank"
             className="
               px-5
@@ -301,8 +301,8 @@ const Navbar = () => {
             </button>
 
             <a
-              href="/CV/CV - Lorensius Bernard Gani - updated.pdf"
-              download="CV - Lorensius Bernard Gani - updated.pdf"
+              href="/CV/CV - Lorensius Bernard Gani.pdf"
+              download="CV - Lorensius Bernard Gani.pdf"
               onClick={() => setNav(false)}
               target="_blank"
               className="

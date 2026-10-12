@@ -183,12 +183,13 @@ const About: React.FC = () => {
             {/* Deskripsi */}
             <div className="lg:col-span-1">
               <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-5 text-slate-900 dark:text-white">Full Stack Developer</h3>
-              <p className="text-slate-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
-                Computer Science undergraduate at BINUS University with
-                experience building modern web applications using ASP.NET Core,
-                Next.js, TypeScript, PostgreSQL and React. Experienced in bug
-                fixing, feature development, software maintenance, and
-                collaborative agile environments.
+              <p className="text-slate-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base text-left text-pretty">
+                Full Stack Developer with 1.5+ years of experience building and
+                maintaining web applications using React/Next.js (TypeScript),
+                ASP.NET Core Web API, and PostgreSQL in Agile/Scrum teams.
+                Computer Science graduate from BINUS University (GPA 3.66/4.00)
+                with strong leadership, communication, and time management
+                skills, dedicated to building impactful digital products.
               </p>
             </div>
 

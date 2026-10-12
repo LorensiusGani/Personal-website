@@ -714,12 +714,11 @@ C:.
               </div>
               <div>
                 <h3 className="text-base font-bold text-white">Lorensius Bernard Gani</h3>
-                <p className="text-xs text-[#4EA792]">Full Stack Developer & CS Student @ BINUS University</p>
+                <p className="text-xs text-[#4EA792]">Full Stack Developer & CS Graduate @ BINUS University</p>
               </div>
             </div>
-            <p className="text-slate-300 text-xs sm:text-sm">
-              Passionate Computer Science undergraduate (GPA: 3.66/4.00) focused on developing robust, scalable full-stack web applications.
-              Experienced in building modern systems using <span className="text-emerald-400 font-semibold">ASP.NET Core Web API</span>, <span className="text-emerald-400 font-semibold">Next.js</span>, <span className="text-emerald-400 font-semibold">TypeScript</span>, <span className="text-emerald-400 font-semibold">PostgreSQL</span>, and <span className="text-emerald-400 font-semibold">Go</span>.
+            <p className="text-slate-300 text-xs sm:text-sm text-left text-pretty">
+              Full Stack Developer with 1.5+ years of experience building and maintaining web applications using React/Next.js (TypeScript), ASP.NET Core Web API, and PostgreSQL in Agile/Scrum teams. Computer Science graduate from BINUS University (GPA 3.66/4.00) with strong leadership, communication, and time management skills, dedicated to building impactful digital products.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 text-xs">
               <div className="bg-white/5 border border-white/10 p-2.5 rounded-lg text-center">
@@ -994,7 +993,7 @@ C:.
             <p className="text-emerald-400 font-bold">📄 Lorensius Bernard Gani - Resume / CV</p>
             <div className="flex gap-2 pt-1">
               <a
-                href="/CV/CV - Lorensius Bernard Gani - updated.pdf"
+                href="/CV/CV - Lorensius Bernard Gani.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#3D8D7A] hover:bg-[#4EA792] text-white text-xs font-semibold transition shadow"
@@ -1002,8 +1001,8 @@ C:.
                 <FaExternalLinkAlt size={11} /> Open CV in Tab
               </a>
               <a
-                href="/CV/CV - Lorensius Bernard Gani - updated.pdf"
-                download="CV - Lorensius Bernard Gani - updated.pdf"
+                href="/CV/CV - Lorensius Bernard Gani.pdf"
+                download="CV - Lorensius Bernard Gani.pdf"
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-slate-200 text-xs font-semibold transition"
               >
                 <FaDownload size={11} /> Download PDF

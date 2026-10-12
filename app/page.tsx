@@ -77,7 +77,7 @@ export default function Home() {
                   max-w-2xl
                 "
               >
-                Computer Science Student at BINUS University and Full Stack
+                Computer Science Graduate at BINUS University and Full Stack
                 Developer focused on building modern web applications using
                 ASP.NET Core, Next.js, TypeScript, and PostgreSQL.
               </p>
@@ -104,7 +104,7 @@ export default function Home() {
               {/* Buttons */}
               <div className="flex flex-wrap gap-4 mt-8">
                 <a
-                  href="/CV/CV - Lorensius Bernard Gani - updated.pdf"
+                  href="/CV/CV - Lorensius Bernard Gani.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
